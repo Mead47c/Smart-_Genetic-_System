@@ -1,0 +1,179 @@
+.root-pane {
+    -fx-background-color: #fff;
+}
+
+.top-pane {
+    -fx-background-color: #2196F3;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: transparent;
+    -fx-padding: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.2, 0, 4);
+}
+
+.title-label {
+    -fx-font-family: "Montserrat Black";
+    -fx-font-size: 30;
+    -fx-text-fill: #fff;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.2, 0, 4);
+}
+
+.left-pane {
+    -fx-background-color: #2196F3;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: transparent;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.2, 0, 4);
+}
+
+.center-pane {
+    /* -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #79c0f7, #ffffff); */
+    -fx-background-color: #fff;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: transparent;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.2, 0, 4);
+}
+
+.nav-buttons {
+    -fx-background-color: transparent;
+    -fx-min-width: 150;
+    -fx-max-width: 150;
+    -fx-min-height: 45;
+    -fx-max-height: 45;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.2, 0, 4);
+    -fx-font-family: Roboto;
+    -fx-font-size: 18;
+    -fx-text-fill: #fff;
+    -fx-cursor: hand;
+}
+
+.nav-buttons:hover {
+    -fx-background-color: #fff;
+    -fx-text-fill: #2196F3;
+}
+
+.nav-close-button {
+    -fx-background-color: transparent;
+    -fx-background-image: url("../images/exit-blue.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 40 40;
+    -fx-background-position: center;
+    -fx-min-width: 150;
+    -fx-max-width: 150;
+    -fx-min-height: 45;
+    -fx-max-height: 45;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.2, 0, 4);
+    -fx-cursor: hand;
+}
+
+.nav-close-button:hover {
+    -fx-background-image: url("../images/exit-red.png");
+}
+
+.search-field {
+    -fx-background-color: transparent;
+    -fx-border-width: 1px;
+    -fx-border-color: #1a78c2;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-min-height: 35;
+    -fx-max-height: 35;
+    -fx-font-family: Roboto;
+    -fx-font-size: 16;
+    -fx-text-fill: #000;
+    -fx-padding: 0 0 0 50;
+    -fx-prompt-text-fill: #d2eafc;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.2, 0, 4);
+    -fx-cursor: text;
+}
+
+.search-field:focused {
+    -fx-border-width: 2px;
+}
+
+.add-new-patient-button {
+    -fx-background-color: #2196F3;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: transparent;
+    -fx-font-family: Roboto;
+    -fx-font-size: 16;
+    -fx-text-fill: #fff;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.2, 0, 4);
+    -fx-cursor: hand;
+}
+
+.add-new-patient-button:hover {
+    -fx-background-color: #fff;
+    -fx-text-fill: #2196F3;
+}
+
+
+.table-view {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: transparent;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.2, 0, 4);
+    -fx-padding: 10;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #2196F3;
+    -fx-background-radius: 20 20 0 0;
+    -fx-border-radius: 20 20 0 0;
+    -fx-border-color: transparent;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+    -fx-text-fill: #fff;
+    -fx-font-family: Roboto;
+    -fx-font-size: 14;
+    -fx-font-weight: bold;
+}
+
+.table-view .table-row-cell {
+    -fx-background-color: #fff;
+    -fx-text-fill: #000;
+    -fx-font-family: Roboto;
+    -fx-font-size: 14;
+}
+
+.table-view .table-row-cell:odd {
+    -fx-background-color: #f9f9f9;
+}
+
+.table-view .table-row-cell:selected {
+    -fx-background-color: #2196F3;
+    -fx-text-fill: #fff;
+}
+
+.table-view .table-cell {
+    -fx-border-color: transparent;
+    -fx-padding: 10;
+}
+
+.table-view .scroll-bar:horizontal,
+.table-view .scroll-bar:vertical {
+    -fx-background-color: transparent;
+}
+
+.table-view .scroll-bar:horizontal .thumb,
+.table-view .scroll-bar:vertical .thumb {
+    -fx-background-color: #2196F3;
+    -fx-background-radius: 10;
+}
+
+.table-view .scroll-bar:horizontal .thumb:hover,
+.table-view .scroll-bar:vertical .thumb:hover {
+    -fx-background-color: #1a78c2;
+}
+
+.table-view .virtual-flow {
+    -fx-translate-y: 5px;
+}
+
+
+

@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import java.lang.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:id="root" prefHeight="680.0" prefWidth="600.0"
+            stylesheets="@../../../styles/add-new-patient-style.css" xmlns="http://javafx.com/javafx/23.0.1"
+            fx:controller="com.example.genessystem.NewPatientController">
+    <children>
+        <HBox alignment="CENTER_LEFT" layoutX="25.0" layoutY="26.0" prefHeight="120.0" prefWidth="550.0" spacing="10.0"
+              styleClass="title-pane" stylesheets="@../../../styles/add-new-patient-style.css">
+            <children>
+                <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true"
+                           styleClass="icon-shadow">
+                    <image>
+                        <Image url="@../../../images/signupLogo.png"/>
+                    </image>
+                    <effect>
+                        <ColorAdjust brightness="1.0"/>
+                    </effect>
+                </ImageView>
+                <Label styleClass="icon-shadow" text="Add New Patient" textFill="WHITE">
+                    <font>
+                        <Font name="Montserrat Black" size="30.0"/>
+                    </font>
+                    <HBox.margin>
+                        <Insets top="15.0"/>
+                    </HBox.margin>
+                </Label>
+            </children>
+        </HBox>
+        <VBox alignment="TOP_CENTER" layoutX="25.0" layoutY="154.0" prefHeight="500.0" prefWidth="550.0" spacing="20.0"
+              styleClass="main-pane" stylesheets="@../../../styles/add-new-patient-style.css">
+            <children>
+                <HBox alignment="CENTER" maxWidth="500.0" minWidth="500.0" spacing="30.0">
+                    <children>
+                        <HBox spacing="5.0">
+                            <children>
+                                <Button disable="true" mnemonicParsing="false"
+                                        stylesheets="@../../../styles/add-new-patient-style.css">
+                                    <styleClass>
+                                        <String fx:value="icon-button"/>
+                                        <String fx:value="national-id-button"/>
+                                    </styleClass>
+                                </Button>
+                                <TextField fx:id="addNewPatient_nationalIDField" promptText="National ID"/>
+                            </children>
+                        </HBox>
+                        <HBox spacing="5.0">
+                            <children>
+                                <Button disable="true" mnemonicParsing="false"
+                                        stylesheets="@../../../styles/add-new-patient-style.css">
+                                    <styleClass>
+                                        <String fx:value="icon-button"/>
+                                        <String fx:value="patient-id-button"/>
+                                    </styleClass>
+                                </Button>
+                                <TextField fx:id="addNewPatient_medicalRecordField" disable="true" editable="false"
+                                           promptText="Medical Record" style="-fx-opacity: 1.0;"/>
+                            </children>
+                        </HBox>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER" maxWidth="500.0" minWidth="500.0" spacing="30.0">
+                    <children>
+                        <HBox spacing="5.0">
+                            <children>
+                                <Button disable="true" mnemonicParsing="false"
+                                        stylesheets="@../../../styles/add-new-patient-style.css">
+                                    <styleClass>
+                                        <String fx:value="icon-button"/>
+                                        <String fx:value="first-name-button"/>
+                                    </styleClass>
+                                </Button>
+                                <TextField fx:id="addNewPatient_firstNameField" promptText="First Name"/>
+                            </children>
+                        </HBox>
+                        <HBox spacing="5.0">
+                            <children>
+                                <Button disable="true" mnemonicParsing="false"
+                                        stylesheets="@../../../styles/add-new-patient-style.css">
+                                    <styleClass>
+                                        <String fx:value="icon-button"/>
+                                        <String fx:value="first-name-button"/>
+                                    </styleClass>
+                                </Button>
+                                <TextField fx:id="addNewPatient_lastNameField" promptText="Last Name"/>
+                            </children>
+                        </HBox>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER" maxWidth="500.0" minWidth="500.0" spacing="30.0">
+                    <children>
+                        <HBox spacing="5.0">
+                            <children>
+                                <Button disable="true" mnemonicParsing="false"
+                                        stylesheets="@../../../styles/add-new-patient-style.css">
+                                    <styleClass>
+                                        <String fx:value="icon-button"/>
+                                        <String fx:value="date-of-birth-button"/>
+                                    </styleClass>
+                                </Button>
+                                <DatePicker fx:id="addNewPatient_dateOfBirthPicker" promptText="Date of Birth"/>
+                            </children>
+                        </HBox>
+                        <HBox spacing="5.0">
+                            <children>
+                                <Button disable="true" mnemonicParsing="false"
+                                        stylesheets="@../../../styles/add-new-patient-style.css">
+                                    <styleClass>
+                                        <String fx:value="icon-button"/>
+                                        <String fx:value="age-button"/>
+                                    </styleClass>
+                                </Button>
+                                <TextField fx:id="addNewPatient_ageField" editable="false" promptText="Age"/>
+                            </children>
+                        </HBox>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER" maxWidth="500.0" minWidth="500.0" spacing="30.0">
+                    <children>
+                        <HBox spacing="5.0">
+                            <children>
+                                <Button disable="true" mnemonicParsing="false"
+                                        stylesheets="@../../../styles/add-new-patient-style.css">
+                                    <styleClass>
+                                        <String fx:value="icon-button"/>
+                                        <String fx:value="email-button"/>
+                                    </styleClass>
+                                </Button>
+                                <TextField fx:id="addNewPatient_emailField" promptText="Email"/>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER" spacing="5.0">
+                            <children>
+                                <Button disable="true" mnemonicParsing="false"
+                                        stylesheets="@../../../styles/add-new-patient-style.css">
+                                    <styleClass>
+                                        <String fx:value="icon-button"/>
+                                        <String fx:value="phone-button"/>
+                                    </styleClass>
+                                </Button>
+                                <TextField disable="true" editable="false" styleClass="phone-prefix-text-field"
+                                           stylesheets="@../../../styles/add-new-patient-style.css" text="966"/>
+                                <TextField fx:id="addNewPatient_phoneNumberField" promptText="Phone Number"
+                                           styleClass="phone-number-text-field"
+                                           stylesheets="@../../../styles/add-new-patient-style.css"/>
+                            </children>
+                        </HBox>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER" layoutX="36.0" layoutY="152.0" maxWidth="500.0" minWidth="500.0"
+                      spacing="65.0">
+                    <children>
+                        <HBox alignment="CENTER_LEFT" maxWidth="300.0" minWidth="200.0" spacing="10.0">
+                            <children>
+                                <HBox alignment="CENTER" spacing="5.0">
+                                    <children>
+                                        <Button disable="true" mnemonicParsing="false"
+                                                stylesheets="@../../../styles/add-new-patient-style.css">
+                                            <styleClass>
+                                                <String fx:value="icon-button"/>
+                                                <String fx:value="gender-button"/>
+                                            </styleClass>
+                                        </Button>
+                                        <Label styleClass="label-subtitle"
+                                               stylesheets="@../../../styles/add-new-patient-style.css" text="Gender:"/>
+                                    </children>
+                                </HBox>
+                                <VBox alignment="CENTER_LEFT" spacing="5.0">
+                                    <children>
+                                        <RadioButton fx:id="addNewPatient_maleRadioButton" mnemonicParsing="false"
+                                                     text="Male"/>
+                                        <RadioButton fx:id="addNewPatient_femaleRadioButton" mnemonicParsing="false"
+                                                     text="Female"/>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </HBox>
+                        <VBox alignment="CENTER" spacing="5.0">
+                            <children>
+                                <Label styleClass="label-subtitle"
+                                       stylesheets="@../../../styles/add-new-patient-style.css" text="Disease">
+                                    <VBox.margin>
+                                        <Insets right="30.0"/>
+                                    </VBox.margin>
+                                </Label>
+                                <HBox spacing="5.0">
+                                    <children>
+                                        <Button disable="true" mnemonicParsing="false"
+                                                stylesheets="@../../../styles/add-new-patient-style.css">
+                                            <styleClass>
+                                                <String fx:value="icon-button"/>
+                                                <String fx:value="disease-button"/>
+                                            </styleClass>
+                                        </Button>
+                                        <ComboBox fx:id="addNewPatient_diseaseCombobox" prefWidth="150.0"
+                                                  promptText="Choose..."/>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER" maxWidth="500.0" minWidth="500.0" spacing="30.0">
+                    <children>
+                        <VBox alignment="CENTER" spacing="5.0">
+                            <children>
+                                <Label styleClass="label-subtitle"
+                                       stylesheets="@../../../styles/add-new-patient-style.css" text="Disease Condition"
+                                       textAlignment="CENTER" wrapText="true">
+                                    <VBox.margin>
+                                        <Insets right="30.0"/>
+                                    </VBox.margin>
+                                </Label>
+                                <HBox spacing="5.0">
+                                    <children>
+                                        <Button disable="true" mnemonicParsing="false"
+                                                stylesheets="@../../../styles/add-new-patient-style.css">
+                                            <styleClass>
+                                                <String fx:value="icon-button"/>
+                                                <String fx:value="disease-button"/>
+                                            </styleClass>
+                                        </Button>
+                                        <ComboBox fx:id="addNewPatient_diseaseConditionCombobox" prefWidth="150.0"
+                                                  promptText="Choose..."/>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                        <VBox alignment="CENTER" spacing="5.0">
+                            <children>
+                                <Label styleClass="label-subtitle"
+                                       stylesheets="@../../../styles/add-new-patient-style.css" text="Degree of Kinship"
+                                       textAlignment="CENTER" wrapText="true">
+                                    <VBox.margin>
+                                        <Insets right="30.0"/>
+                                    </VBox.margin>
+                                </Label>
+                                <HBox spacing="5.0">
+                                    <children>
+                                        <Button disable="true" mnemonicParsing="false"
+                                                stylesheets="@../../../styles/add-new-patient-style.css">
+                                            <styleClass>
+                                                <String fx:value="icon-button"/>
+                                                <String fx:value="kinship-button"/>
+                                            </styleClass>
+                                        </Button>
+                                        <ComboBox fx:id="addNewPatient_kinshipCombobox" prefWidth="150.0"
+                                                  promptText="Choose..."/>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+                <Label fx:id="addNewPatient_statusLabel" text="Status Label" visible="false">
+                    <font>
+                        <Font name="Roboto" size="14.0"/>
+                    </font>
+                </Label>
+                <Line endX="100.0" startX="-400.0" stroke="#2196f3" strokeWidth="3.0">
+                    <VBox.margin>
+                        <Insets/>
+                    </VBox.margin>
+                </Line>
+                <HBox alignment="CENTER" maxWidth="500.0" minWidth="500.0" spacing="20.0">
+                    <children>
+                        <Button fx:id="addNewPatient_confirm" mnemonicParsing="false"
+                                onAction="#ConfirmSavingNewPatient" styleClass="confirm-button"
+                                stylesheets="@../../../styles/add-new-patient-style.css" text="Confirm"/>
+                        <Button fx:id="addNewPatient_cancel" mnemonicParsing="false" onAction="#cancelAddingNewPatient"
+                                styleClass="cancel-button" stylesheets="@../../../styles/add-new-patient-style.css"
+                                text="Cancel"/>
+                    </children>
+                    <VBox.margin>
+                        <Insets/>
+                    </VBox.margin>
+                </HBox>
+            </children>
+            <padding>
+                <Insets top="20.0"/>
+            </padding>
+        </VBox>
+    </children>
+</AnchorPane>

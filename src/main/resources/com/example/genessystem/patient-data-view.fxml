@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:id="patientData_root" maxHeight="-Infinity" maxWidth="-Infinity"
+            minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0"
+            styleClass="root-pane" stylesheets="@../../../styles/patient-data-style.css"
+            xmlns="http://javafx.com/javafx/23.0.1" fx:controller="com.example.genessystem.PatientDataController">
+    <top>
+        <HBox alignment="CENTER_LEFT" prefHeight="150.0" prefWidth="1000.0" styleClass="top-pane"
+              stylesheets="@../../../styles/patient-data-style.css" BorderPane.alignment="CENTER">
+            <children>
+                <VBox alignment="CENTER" spacing="5.0">
+                    <children>
+                        <StackPane>
+                            <children>
+                                <Label minWidth="277.0" prefHeight="78.0" prefWidth="280.0" styleClass="title-label"
+                                       stylesheets="@../../../styles/patient-data-style.css" text="Smart Genetic System"
+                                       textAlignment="CENTER" wrapText="true"/>
+                                <Label text="©" textFill="WHITE">
+                                    <font>
+                                        <Font name="Consolas" size="25.0"/>
+                                    </font>
+                                    <StackPane.margin>
+                                        <Insets left="150.0" top="30.0"/>
+                                    </StackPane.margin>
+                                </Label>
+                            </children>
+                        </StackPane>
+                        <Label text="V1.001">
+                            <font>
+                                <Font name="Consolas" size="14.0"/>
+                            </font>
+                        </Label>
+                    </children>
+                </VBox>
+                <VBox alignment="CENTER" prefHeight="200.0" prefWidth="180.0" spacing="5.0">
+                    <children>
+                        <Label text="Username:">
+                            <font>
+                                <Font name="Roboto" size="16.0"/>
+                            </font>
+                        </Label>
+                        <Label fx:id="patientData_usernameLabel" style="-fx-font-weight: bold;" text="Label"
+                               textFill="WHITE" wrapText="true">
+                            <font>
+                                <Font name="Roboto" size="16.0"/>
+                            </font>
+                        </Label>
+                    </children>
+                    <HBox.margin>
+                        <Insets left="530.0"/>
+                    </HBox.margin>
+                </VBox>
+                <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../images/mainLogo-white.png"/>
+                    </image>
+                </ImageView>
+            </children>
+            <BorderPane.margin>
+                <Insets left="10.0" right="10.0" top="10.0"/>
+            </BorderPane.margin>
+        </HBox>
+    </top>
+    <left>
+        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="150.0" spacing="20.0" styleClass="left-pane"
+              stylesheets="@../../../styles/patient-data-style.css" BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+            </BorderPane.margin>
+            <children>
+                <Button fx:id="patientData_dashboardButton" mnemonicParsing="false" onAction="#switchToDashboard"
+                        styleClass="nav-buttons" stylesheets="@../../../styles/patient-data-style.css"
+                        text="Dashboard"/>
+                <Button fx:id="patientData_patientDataButton" disable="true" mnemonicParsing="false"
+                        styleClass="nav-buttons" stylesheets="@../../../styles/patient-data-style.css"
+                        text="Patient Data"/>
+                <Button fx:id="patientData_diagnosticsButton" mnemonicParsing="false" styleClass="nav-buttons"
+                        stylesheets="@../../../styles/patient-data-style.css" text="Diagnostics"/>
+                <Button fx:id="patientData_logoutButton" mnemonicParsing="false" onAction="#logout"
+                        styleClass="nav-buttons" stylesheets="@../../../styles/patient-data-style.css" text="Logout"/>
+                <Button fx:id="patientData_exit" mnemonicParsing="false" onAction="#closeProgram"
+                        styleClass="nav-close-button" stylesheets="@../../../styles/patient-data-style.css"/>
+            </children>
+        </VBox>
+    </left>
+    <center>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="center-pane"
+                    stylesheets="@../../../styles/patient-data-style.css" BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets bottom="10.0" right="10.0" top="10.0"/>
+            </BorderPane.margin>
+            <children>
+                <HBox layoutX="14.0" layoutY="14.0" spacing="10.0">
+                    <children>
+                        <StackPane prefHeight="39.0" prefWidth="800.0">
+                            <children>
+                                <ImageView fitHeight="32.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../images/search.png"/>
+                                    </image>
+                                    <effect>
+                                        <ColorAdjust/>
+                                    </effect>
+                                    <StackPane.margin>
+                                        <Insets right="760.0" top="1.0"/>
+                                    </StackPane.margin>
+                                </ImageView>
+                                <TextField fx:id="patientData_searchField" prefWidth="800.0"
+                                           promptText="Search for patient ..." styleClass="search-field"
+                                           stylesheets="@../../../styles/patient-data-style.css">
+                                    <StackPane.margin>
+                                        <Insets/>
+                                    </StackPane.margin>
+                                </TextField>
+                            </children>
+                        </StackPane>
+                        <Button fx:id="patientData_addNewPatientButton" mnemonicParsing="false"
+                                onAction="#addNewPatient" prefWidth="150.0" styleClass="add-new-patient-button"
+                                stylesheets="@../../../styles/patient-data-style.css" text="Add New Patient"/>
+                    </children>
+                </HBox>
+                <TableView fx:id="patientData_tableView" layoutX="14.0" layoutY="60.0" prefHeight="422.0"
+                           prefWidth="974.0">
+                    <columns>
+                        <TableColumn fx:id="patientData_idCol" minWidth="120.0" prefWidth="75.0" text="ID"/>
+                        <TableColumn fx:id="patientData_firstNameCol" minWidth="120.0" prefWidth="75.0"
+                                     text="First Name"/>
+                        <TableColumn fx:id="patientData_lastNameCol" minWidth="120.0" prefWidth="75.0"
+                                     text="Last Name"/>
+                        <TableColumn fx:id="patientData_phoneCol" minWidth="120.0" prefWidth="75.0" text="Phone #"/>
+                        <TableColumn fx:id="patientData_emailCol" minWidth="250.0" prefWidth="75.0" text="Email"/>
+                        <TableColumn fx:id="patientData_commentsCol" minWidth="200.0" prefWidth="75.0" text="Comments"/>
+                    </columns>
+                </TableView>
+            </children>
+        </AnchorPane>
+    </center>
+</BorderPane>

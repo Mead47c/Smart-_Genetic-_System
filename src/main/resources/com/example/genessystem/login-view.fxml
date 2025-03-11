@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity"
+            minHeight="-Infinity"
+            minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="525.0"
+            prefWidth="700.0" stylesheets="@../../../styles/login-style.css"
+            xmlns="http://javafx.com/javafx/23.0.1" fx:controller="com.example.genessystem.LoginController">
+    <children>
+        <HBox alignment="CENTER_LEFT" layoutX="31.0" layoutY="50.0" prefHeight="100.0" prefWidth="300.0"
+              styleClass="title-pane" stylesheets="@../../../styles/login-style.css">
+            <children>
+                <ImageView fx:id="mainAppLogo" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true"
+                           styleClass="icon-shadow">
+                    <image>
+                        <Image url="@../../../images/loginLogo.png"/>
+                    </image>
+                    <effect>
+                        <ColorAdjust brightness="1.0"/>
+                    </effect>
+                </ImageView>
+                <Label fx:id="mainTitleLabel" styleClass="icon-shadow" text=" Login." textFill="WHITE">
+                    <font>
+                        <Font name="Montserrat Black" size="30.0"/>
+                    </font>
+                    <HBox.margin>
+                        <Insets top="15.0"/>
+                    </HBox.margin>
+                </Label>
+            </children>
+        </HBox>
+        <VBox fx:id="loginScreen" alignment="TOP_CENTER" layoutX="31.0" layoutY="158.0" prefHeight="300.0"
+              prefWidth="300.0" spacing="10.0" styleClass="login-pane" stylesheets="@../../../styles/login-style.css">
+            <children>
+                <HBox fx:id="login_usernamePane" alignment="CENTER">
+                    <VBox.margin>
+                        <Insets top="50.0"/>
+                    </VBox.margin>
+                    <children>
+                        <Button disable="true" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0"
+                                styleClass="username-button" stylesheets="@../../../styles/login-style.css">
+                        </Button>
+                        <TextField fx:id="loginScreen_usernameField" promptText="Username..."/>
+                    </children>
+                </HBox>
+                <VBox alignment="CENTER" spacing="10.0">
+                    <children>
+                        <HBox alignment="CENTER">
+                            <children>
+                                <Button disable="true" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0"
+                                        styleClass="password-button" stylesheets="@../../../styles/login-style.css">
+                                </Button>
+                                <StackPane fx:id="login_passwordPane">
+                                    <children>
+                                        <PasswordField fx:id="loginScreen_passwordField" promptText="Password..."/>
+                                        <TextField fx:id="loginScreen_VisiblePasswordField" promptText="Password"
+                                                   visible="false"/>
+                                    </children>
+                                </StackPane>
+                            </children>
+                        </HBox>
+                        <CheckBox fx:id="loginScreen_showPasswordCheckbox" mnemonicParsing="false" text="Show Password">
+                            <VBox.margin>
+                                <Insets right="55.0"/>
+                            </VBox.margin>
+                        </CheckBox>
+                    </children>
+                </VBox>
+                <Button fx:id="loginScreen_loginButton" mnemonicParsing="false" onAction="#login"
+                        styleClass="login-button" stylesheets="@../../../styles/login-style.css" text="Login">
+                    <VBox.margin>
+                        <Insets top="20.0"/>
+                    </VBox.margin>
+                </Button>
+                <Hyperlink text="Forget Password?">
+                    <VBox.margin>
+                        <Insets/>
+                    </VBox.margin>
+                </Hyperlink>
+                <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="200.0">
+                    <children>
+                        <Label text="Don't have an account?" textFill="#2196f3">
+                            <font>
+                                <Font name="Roboto" size="13.0"/>
+                            </font>
+                        </Label>
+                        <Button fx:id="loginScreen_SignupButton" mnemonicParsing="false" styleClass="signup-button"
+                                stylesheets="@../../../styles/login-style.css" text="Signup!" textFill="#2196f3"/>
+                    </children>
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                    </padding>
+                </FlowPane>
+            </children>
+        </VBox>
+        <Button fx:id="closeButton" layoutX="637.0" layoutY="14.0" mnemonicParsing="false" onAction="#closeApplication"
+                prefHeight="50.0" prefWidth="49.0" styleClass="close-button"
+                stylesheets="@../../../styles/login-style.css"/>
+        <VBox fx:id="signupScreen" alignment="TOP_CENTER" layoutX="31.0" layoutY="158.0" prefHeight="300.0"
+              prefWidth="300.0" spacing="10.0" styleClass="login-pane" stylesheets="@../../../styles/login-style.css"
+              visible="false">
+            <children>
+                <HBox alignment="CENTER">
+                    <VBox.margin>
+                        <Insets top="20.0"/>
+                    </VBox.margin>
+                    <children>
+                        <Button disable="true" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0"
+                                styleClass="username-button" stylesheets="@../../../styles/login-style.css"/>
+                        <TextField fx:id="signupScreen_usernameField" promptText="Username..."/>
+                    </children>
+                </HBox>
+                <VBox alignment="CENTER" spacing="10.0">
+                    <children>
+                        <HBox alignment="CENTER">
+                            <children>
+                                <Button disable="true" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0"
+                                        styleClass="password-button" stylesheets="@../../../styles/login-style.css"/>
+                                <StackPane>
+                                    <children>
+                                        <PasswordField fx:id="signupScreen_passwordField" promptText="Password..."/>
+                                        <TextField fx:id="signupScreen_VisiblePasswordField" promptText="Password"
+                                                   visible="false"/>
+                                    </children>
+                                </StackPane>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0">
+                            <children>
+                                <Button disable="true" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0"
+                                        styleClass="password-button" stylesheets="@../../../styles/login-style.css"/>
+                                <PasswordField fx:id="signupScreen_repeatPasswordField"
+                                               promptText="Repeat Password..."/>
+                            </children>
+                        </HBox>
+                        <CheckBox fx:id="signupScreen_showPasswordCheckbox" mnemonicParsing="false"
+                                  text="Show Password">
+                            <VBox.margin>
+                                <Insets right="55.0"/>
+                            </VBox.margin>
+                        </CheckBox>
+                    </children>
+                </VBox>
+                <HBox alignment="CENTER" layoutX="11.0" layoutY="61.0">
+                    <children>
+                        <Button disable="true" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0"
+                                styleClass="email-button" stylesheets="@../../../styles/login-style.css"/>
+                        <TextField fx:id="signupScreen_emailField" promptText="Email..."/>
+                    </children>
+                </HBox>
+                <Button fx:id="signupScreen_signupButton" mnemonicParsing="false" onAction="#createNewAccount"
+                        styleClass="login-button" stylesheets="@../../../styles/login-style.css" text="Signup!">
+                    <VBox.margin>
+                        <Insets top="20.0"/>
+                    </VBox.margin>
+                </Button>
+                <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="200.0">
+                    <children>
+                        <Label text="Already have an account?" textFill="#2196f3">
+                            <font>
+                                <Font name="Roboto" size="13.0"/>
+                            </font>
+                        </Label>
+                        <Button fx:id="signupScreen_loginButton" mnemonicParsing="false" styleClass="signup-button"
+                                stylesheets="@../../../styles/login-style.css" text="Login!"/>
+                    </children>
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                    </padding>
+                </FlowPane>
+            </children>
+        </VBox>
+        <Label fx:id="usernameStatusLabel" layoutX="85.0" layoutY="495.0" text="Username status" textFill="#fc0000"
+               visible="false">
+            <font>
+                <Font name="Roboto" size="14.0"/>
+            </font>
+        </Label>
+        <Label fx:id="passwordStatusLabel" layoutX="85.0" layoutY="495.0" text="Password status" textFill="#fc0000"
+               visible="false">
+            <font>
+                <Font name="Roboto" size="14.0"/>
+            </font>
+        </Label>
+        <Label fx:id="rePasswordStatusLabel" layoutX="85.0" layoutY="495.0" text="Repeated Password status"
+               textFill="#fc0000" visible="false">
+            <font>
+                <Font name="Roboto" size="14.0"/>
+            </font>
+        </Label>
+        <Label fx:id="emailStatusLabel" layoutX="85.0" layoutY="495.0" text="Email status" textFill="#fc0000"
+               visible="false">
+            <font>
+                <Font name="Roboto" size="14.0"/>
+            </font>
+        </Label>
+        <ImageView fitHeight="185.0" fitWidth="230.0" layoutX="411.0" layoutY="128.0" pickOnBounds="true"
+                   preserveRatio="true">
+            <image>
+                <Image url="@../../../images/mainLogo.png"/>
+            </image>
+        </ImageView>
+        <Label layoutX="391.0" layoutY="305.0" prefHeight="90.0" prefWidth="272.0" text="Genetic Genes System"
+               textAlignment="CENTER" textFill="#2196f3" wrapText="true">
+            <font>
+                <Font name="Roboto Black" size="30.0"/>
+            </font>
+        </Label>
+        <Label layoutX="579.0" layoutY="353.0" text="©" textFill="#2196f3">
+            <font>
+                <Font name="System Bold" size="19.0"/>
+            </font>
+        </Label>
+        <Label layoutX="460.0" layoutY="393.0" text="2025. All Rights Reserved" textFill="#2196f3"/>
+    </children>
+</AnchorPane>

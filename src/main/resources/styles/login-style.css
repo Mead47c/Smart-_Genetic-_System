@@ -1,0 +1,177 @@
+/*
+.root{
+    -fx-background-image: url("../images/white.jpg");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover;
+    -fx-background-position: center;
+}
+ */
+
+.root {
+    -fx-background-color: #f2f0ef;
+}
+
+
+.title-pane {
+    -fx-background-color: #2196F3;
+    -fx-background-radius: 20 20 0 0;
+    -fx-border-radius: 20 20 0 0;
+    -fx-border-color: transparent;
+    -fx-padding: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.2, 0, 4);
+}
+
+.icon-shadow {
+    -fx-effect: dropshadow(gaussian, #1769aa, 10, 0.7, 2, 6);
+}
+
+.login-pane {
+    -fx-background-color: #fff;
+    -fx-background-radius: 0 0 20 20;
+    -fx-border-radius: 0 0 20 20;
+    -fx-border-color: transparent;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 8, 0, 0, 3);
+}
+
+
+.text-field {
+    -fx-background-color: transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: #2196F3;
+    -fx-min-width: 200;
+    -fx-max-width: 200;
+    -fx-font-family: Roboto;
+    -fx-font-size: 15;
+    -fx-text-fill: #2196f3;
+    -fx-prompt-text-fill: #90caf9;
+    -fx-cursor: text;
+}
+
+.text-field:focused {
+    -fx-border-width: 0 0 2 0;
+    -fx-border-color: #2196f3;
+}
+
+.login-button {
+    -fx-background-color: #2196F3;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-min-width: 200;
+    -fx-max-width: 200;
+    -fx-min-height: 40;
+    -fx-max-height: 40;
+    -fx-text-fill: #fff;
+    -fx-font-family: Roboto;
+    -fx-font-size: 15;
+    -fx-cursor: hand;
+}
+
+.login-button:hover {
+    -fx-background-color: #2196f3;
+    -fx-text-fill: #fff;
+}
+
+.login-button:focused {
+    -fx-background-color: #2196f3;
+    -fx-text-fill: #fff;
+}
+
+.hyperlink {
+    -fx-font-size: 14;
+}
+
+.signup-button {
+    -fx-background-color: transparent;
+    -fx-font-family: Roboto;
+    -font-size: 13;
+    -fx-text-fill: #2196F3;
+    -fx-cursor: hand;
+}
+
+.signup-button:hover {
+    -fx-text-fill: #2196f3;
+    -fx-underline: true;
+}
+
+.close-button {
+    -fx-background-color: transparent;
+    -fx-background-image: url("../images/exit-blue.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 100%;
+    -fx-background-position: center;
+    -fx-smooth: true;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-cursor: hand;
+}
+
+.close-button:hover {
+    -fx-background-color: transparent;
+    -fx-background-image: url("../images/exit-red.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 100%;
+    -fx-background-position: center;
+    -fx-smooth: true;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+}
+
+.username-button {
+    -fx-background-color: transparent;
+    -fx-background-image: url("../images/username.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 80%;
+    -fx-background-position: center;
+    -fx-opacity: 1.0;
+    -fx-smooth: true;
+}
+
+.password-button {
+    -fx-background-color: transparent;
+    -fx-background-image: url("../images/password.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 80%;
+    -fx-background-position: center;
+    -fx-opacity: 1.0;
+    -fx-smooth: true;
+}
+
+.email-button {
+    -fx-background-color: transparent;
+    -fx-background-image: url("../images/email.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 80%;
+    -fx-background-position: center;
+    -fx-opacity: 1.0;
+    -fx-smooth: true;
+}
+
+.check-box {
+    -fx-font-family: Roboto;
+    -fx-font-size: 14;
+    -fx-text-fill: #2196F3; /* Text color matches buttons */
+    -fx-cursor: hand;
+}
+
+.check-box .box {
+    -fx-background-color: transparent;
+    -fx-border-color: #2196F3; /* Border color to match theme */
+    -fx-border-radius: 5;
+}
+
+.check-box:selected .box {
+    -fx-background-color: #2196F3; /* Checked box color */
+    -fx-border-color: #2196F3;
+}
+
+.check-box:selected .mark {
+    -fx-background-color: white; /* Checkmark color */
+}
+
+.check-box:hover .box {
+    -fx-border-color: #1976D2; /* Slightly darker blue on hover */
+}
+
+.check-box:disabled {
+    -fx-opacity: 0.6; /* Slightly faded when disabled */
+}

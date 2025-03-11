@@ -1,0 +1,347 @@
+.root {
+    -fx-background-color: #f2f0ef;
+}
+
+
+.title-pane {
+    -fx-background-color: #2196F3;
+    -fx-background-radius: 20 20 0 0;
+    -fx-border-radius: 20 20 0 0;
+    -fx-border-color: transparent;
+    -fx-padding: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.2, 0, 4);
+}
+
+
+.icon-shadow {
+    -fx-effect: dropshadow(gaussian, #1769aa, 10, 0.7, 2, 6);
+}
+
+.main-pane {
+    -fx-background-color: #fff;
+    -fx-background-radius: 0 0 20 20;
+    -fx-border-radius: 0 0 20 20;
+    -fx-border-color: transparent;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 8, 0, 0, 8);
+}
+
+
+.text-field {
+    -fx-background-color: transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: #2196F3;
+    -fx-min-width: 200;
+    -fx-max-width: 200;
+    -fx-font-family: Roboto;
+    -fx-font-size: 15;
+    -fx-text-fill: #2196f3;
+    -fx-prompt-text-fill: #90caf9;
+    -fx-cursor: text;
+}
+
+.text-field:focused {
+    -fx-border-width: 0 0 2 0;
+    -fx-border-color: #2196f3;
+}
+
+.confirm-button {
+    -fx-background-color: #2196F3;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-min-width: 200;
+    -fx-max-width: 200;
+    -fx-min-height: 40;
+    -fx-max-height: 40;
+    -fx-text-fill: #fff;
+    -fx-font-weight: bold;
+    -fx-font-family: Roboto;
+    -fx-font-size: 15;
+    -fx-cursor: hand;
+}
+
+.confirm-button:hover {
+    -fx-background-color: #fff;
+    -fx-text-fill: #2196f3;
+    -fx-border-color: #2196f3;
+    -fx-border-width: 1.5;
+}
+
+.cancel-button {
+    -fx-background-color: #fff;
+    -fx-border-color: #ff6666;
+    -fx-border-width: 1.5;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-min-width: 200;
+    -fx-max-width: 200;
+    -fx-min-height: 40;
+    -fx-max-height: 40;
+    -fx-text-fill: #ff6666;
+    -fx-font-family: Roboto;
+    -fx-font-size: 15;
+    -fx-cursor: hand;
+}
+
+.cancel-button:hover {
+    -fx-background-color: #ff6666;
+    -fx-text-fill: #fff;
+    -fx-border-color: transparent;
+}
+
+.icon-button {
+    -fx-background-color: transparent;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-border-width: 2px;
+    -fx-border-color: #2196F3;
+    -fx-border-radius: 2;
+    -fx-min-width: 30;
+    -fx-max-width: 30;
+    -fx-min-height: 30;
+    -fx-max-height: 30;
+    -fx-opacity: 1.0;
+    -fx-smooth: true;
+}
+
+.national-id-button {
+    -fx-background-image: url("../images/id-card.png");
+    -fx-background-size: 90%;
+}
+
+.patient-id-button {
+    -fx-background-image: url("../images/id.png");
+    -fx-background-size: 90%;
+}
+
+.first-name-button {
+    -fx-background-image: url("../images/username.png");
+    -fx-background-size: 90%;
+}
+
+.date-of-birth-button {
+    -fx-background-image: url("../images/dob.png");
+    -fx-background-size: 100%;
+}
+
+.age-button {
+    -fx-background-image: url("../images/age.png");
+    -fx-background-size: 80%;
+}
+
+.email-button {
+    -fx-background-image: url("../images/email.png");
+    -fx-background-size: 80%;
+}
+
+.phone-button {
+    -fx-background-image: url("../images/phone.png");
+    -fx-background-size: 80%;
+}
+
+.gender-button {
+    -fx-background-image: url("../images/gender.png");
+    -fx-background-size: 80%;
+}
+
+.disease-button {
+    -fx-background-image: url("../images/disease.png");
+    -fx-background-size: 80%;
+}
+
+.kinship-button {
+    -fx-background-image: url("../images/kinship.png");
+    -fx-background-size: 80%;
+}
+
+.phone-prefix-text-field {
+    -fx-font-family: Consolas;
+    -fx-min-width: 50;
+    -fx-max-width: 50;
+    -fx-opacity: 1.0;
+}
+
+.phone-number-text-field {
+    -fx-font-family: Consolas;
+    -fx-min-width: 145;
+    -fx-max-width: 145;
+}
+
+.date-picker {
+    -fx-background-color: transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: #2196F3;
+    -fx-font-family: Roboto;
+    -fx-font-size: 15;
+    -fx-text-fill: #2196F3;
+    -fx-prompt-text-fill: #90caf9;
+    -fx-cursor: hand;
+}
+
+.date-picker .arrow-button {
+    -fx-background-color: transparent;
+    -fx-border-color: #2196F3;
+    -fx-border-width: 0 0 1 0;
+}
+
+.date-picker .arrow-button:hover {
+    -fx-background-color: rgba(33, 150, 243, 0.1);
+}
+
+.date-picker .arrow {
+    -fx-background-color: #2196F3;
+}
+
+.date-picker .cell {
+    -fx-background-color: white;
+    -fx-text-fill: #2196F3;
+    -fx-font-family: Roboto;
+    -fx-font-size: 14;
+}
+
+.date-picker .cell:hover {
+    -fx-background-color: rgba(33, 150, 243, 0.1);
+}
+
+.date-picker .selected {
+    -fx-background-color: #2196F3;
+    -fx-text-fill: white;
+}
+
+.date-picker .selected:focused {
+    -fx-background-color: #2196F3;
+    -fx-text-fill: white;
+}
+
+.date-picker-popup {
+    -fx-background-color: white;
+    -fx-border-color: #2196F3;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 10, 0, 0, 3);
+}
+
+
+.radio-button {
+    -fx-font-family: Roboto;
+    -fx-font-size: 14;
+    -fx-text-fill: #2196F3;
+    -fx-cursor: hand;
+}
+
+.radio-button .radio {
+    -fx-background-color: transparent;
+    -fx-border-color: #2196F3;
+    -fx-min-width: 5;
+    -fx-max-width: 5;
+    -fx-min-height: 5;
+    -fx-max-height: 5;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-border-width: 1.5;
+}
+
+.radio-button .dot {
+    -fx-min-width: 5;
+    -fx-max-width: 5;
+    -fx-min-height: 5;
+    -fx-max-height: 5;
+}
+
+.radio-button:selected .radio {
+    -fx-background-color: #2196F3;
+    -fx-border-color: #2196F3;
+}
+
+.radio-button:selected .dot {
+    -fx-background-color: #2196F3;
+}
+
+.radio-button:hover .radio {
+    -fx-border-color: #1976D2;
+}
+
+.label-subtitle {
+    -fx-font-family: Roboto;
+    -fx-font-size: 14;
+    -fx-text-fill: #2196F3;
+    -fx-alignment: center;
+}
+
+.combo-box {
+    -fx-background-color: transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: #2196F3;
+    -fx-font-family: Roboto;
+    -fx-font-size: 15;
+    -fx-text-fill: #2196F3;
+    -fx-prompt-text-fill: #90caf9;
+    -fx-cursor: hand;
+    -fx-min-width: 200;
+    -fx-max-width: 200;
+}
+
+.combo-box:focused {
+    -fx-border-width: 1 1 2 1;
+    -fx-border-radius: 2;
+    -fx-border-color: #2196F3;
+}
+
+.combo-box .list-view {
+    -fx-background-color: white;
+    -fx-border-color: #2196F3;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 10, 0, 0, 3);
+}
+
+.combo-box .arrow-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 0;
+}
+
+.combo-box .arrow-button:hover {
+    -fx-background-color: transparent;
+}
+
+.combo-box .arrow {
+    -fx-background-color: transparent;
+}
+
+.combo-box .cell {
+    -fx-background-color: white;
+    -fx-text-fill: #2196F3;
+    -fx-font-family: Roboto;
+    -fx-font-size: 14;
+}
+
+.combo-box .cell:hover {
+    -fx-background-color: rgba(33, 150, 243, 0.1);
+}
+
+.combo-box .selected {
+    -fx-background-color: #2196F3;
+    -fx-text-fill: white;
+}
+
+.combo-box .selected:focused {
+    -fx-background-color: #2196F3;
+    -fx-text-fill: white;
+}
+
+
+/*
+.combo-box .arrow-button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0;
+    -fx-border-color: transparent;
+}
+
+.combo-box .arrow-button:hover {
+    -fx-background-color: rgba(33, 150, 243, 0.1);
+}
+
+.combo-box .arrow {
+    -fx-background-color: #2196F3;
+}
+*/
