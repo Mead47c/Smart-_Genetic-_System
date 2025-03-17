@@ -36,7 +36,7 @@ public class Main extends Application {
             Effects.movableStage(primaryStage, root);
         } catch (Exception e) {
             e.printStackTrace();
-            Dialogs.showErrorAlert(null, "Failed to load the screen: " + e.getMessage());
+            Dialogs.showAlertMessage("System Error!", "Something Went Wrong !!!: " + e.getMessage(), Dialogs.MessageType.ERROR_MESSAGE);
         }
     }
 

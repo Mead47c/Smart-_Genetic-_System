@@ -1,0 +1,127 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : May 24, 2024, 11:26:02 PM
+    Author     : Sultan
+*/
+
+@font-face {
+    -fx-font-family: "Montserrat";
+    src: url("../fonts/Montserrat-Regular.ttf");
+}
+
+@font-face {
+    -fx-font-family: "Montserrat-Black";
+    src: url("../fonts/Montserrat-Black.ttf");
+}
+
+@font-face {
+    -fx-font-family: "Roboto";
+    src: url("../fonts/Roboto-Regular.ttf");
+}
+
+@font-face {
+    -fx-font-family: "Roboto-Black";
+    src: url("../fonts/Roboto-Black.ttf");
+}
+
+
+.title-bar-style {
+    -fx-background-color: #2196F3;
+    -fx-background-radius: 20 20 0 0;
+    -fx-border-radius: 20 20 0 0;
+    -fx-border-color: transparent;
+    -fx-min-width: 430;
+    -fx-max-width: 430;
+    -fx-min-height: 40;
+    -fx-max-height: 40;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.2, 0, 4);
+}
+
+.alert-pane {
+    -fx-background-color: #fff;
+    -fx-background-radius: 0 0 20 20;
+    -fx-border-radius: 0 0 20 20;
+    -fx-min-width: 430;
+    -fx-max-width: 430;
+    -fx-min-height: 140;
+    -fx-max-height: 140;
+    -fx-border-color: transparent;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 8, 0, 0, 3);
+}
+
+.conf-alert-pane {
+    -fx-min-height: 170;
+    -fx-max-height: 170;
+}
+
+.close-btn {
+    -fx-background-color: transparent;
+    -fx-background-image: url("../images/exit-blue.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 100%;
+    -fx-background-position: center;
+    -fx-smooth: true;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-cursor: hand;
+}
+
+.close-btn:hover {
+    -fx-background-color: transparent;
+    -fx-background-image: url("../images/exit-red.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 100%;
+    -fx-background-position: center;
+    -fx-smooth: true;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+}
+
+.ok-button {
+    -fx-background-color: #2196F3;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-min-width: 100;
+    -fx-max-width: 100;
+    -fx-min-height: 35;
+    -fx-max-height: 35;
+    -fx-text-fill: #fff;
+    -fx-font-family: "Roboto";
+    -fx-font-weight: bold;
+    -fx-font-size: 15;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.2, 0, 4);
+}
+
+.ok-button:hover {
+    -fx-background-color: #fff;
+    -fx-text-fill: #2196f3;
+    -fx-border-color: #2196f3;
+    -fx-border-width: 1.5;
+}
+
+.cancel-button {
+    -fx-background-color: #fff;
+    -fx-border-color: #ff6666;
+    -fx-border-width: 1.5;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-min-width: 100;
+    -fx-max-width: 100;
+    -fx-min-height: 35;
+    -fx-max-height: 35;
+    -fx-text-fill: #ff6666;
+    -fx-font-family: "Roboto";
+    -fx-font-weight: normal;
+    -fx-font-size: 15;
+    -fx-cursor: hand;
+}
+
+.cancel-button:hover {
+    -fx-background-color: #ff6666;
+    -fx-text-fill: #fff;
+    -fx-border-color: transparent;
+}

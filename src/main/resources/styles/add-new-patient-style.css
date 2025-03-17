@@ -1,3 +1,24 @@
+@font-face {
+    -fx-font-family: "Montserrat";
+    src: url("../fonts/Montserrat-Regular.ttf");
+}
+
+@font-face {
+    -fx-font-family: "Montserrat-Black";
+    src: url("../fonts/Montserrat-Black.ttf");
+}
+
+@font-face {
+    -fx-font-family: "Roboto";
+    src: url("../fonts/Roboto-Regular.ttf");
+}
+
+@font-face {
+    -fx-font-family: "Roboto-Black";
+    src: url("../fonts/Roboto-Black.ttf");
+}
+
+
 .root {
     -fx-background-color: #f2f0ef;
 }
@@ -10,6 +31,13 @@
     -fx-border-color: transparent;
     -fx-padding: 10;
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.2, 0, 4);
+}
+
+.title-label {
+    -fx-font-family: "Montserrat-Black";
+    -fx-font-weight: bold;
+    -fx-font-size: 40;
+    -fx-effect: dropshadow(gaussian, #1769aa, 10, 0.7, 2, 6);
 }
 
 
@@ -32,7 +60,7 @@
     -fx-border-color: #2196F3;
     -fx-min-width: 200;
     -fx-max-width: 200;
-    -fx-font-family: Roboto;
+    -fx-font-family: "Roboto";
     -fx-font-size: 15;
     -fx-text-fill: #2196f3;
     -fx-prompt-text-fill: #90caf9;
@@ -53,8 +81,8 @@
     -fx-min-height: 40;
     -fx-max-height: 40;
     -fx-text-fill: #fff;
+    -fx-font-family: "Roboto";
     -fx-font-weight: bold;
-    -fx-font-family: Roboto;
     -fx-font-size: 15;
     -fx-cursor: hand;
 }
@@ -77,7 +105,8 @@
     -fx-min-height: 40;
     -fx-max-height: 40;
     -fx-text-fill: #ff6666;
-    -fx-font-family: Roboto;
+    -fx-font-family: "Roboto";
+    -fx-font-weight: normal;
     -fx-font-size: 15;
     -fx-cursor: hand;
 }
@@ -170,7 +199,8 @@
     -fx-background-color: transparent;
     -fx-border-width: 0 0 1 0;
     -fx-border-color: #2196F3;
-    -fx-font-family: Roboto;
+    -fx-font-family: "Roboto";
+    -fx-font-weight: normal;
     -fx-font-size: 15;
     -fx-text-fill: #2196F3;
     -fx-prompt-text-fill: #90caf9;
@@ -194,7 +224,8 @@
 .date-picker .cell {
     -fx-background-color: white;
     -fx-text-fill: #2196F3;
-    -fx-font-family: Roboto;
+    -fx-font-family: "Roboto";
+    -fx-font-weight: normal;
     -fx-font-size: 14;
 }
 
@@ -222,7 +253,8 @@
 
 
 .radio-button {
-    -fx-font-family: Roboto;
+    -fx-font-family: "Roboto";
+    -fx-font-weight: normal;
     -fx-font-size: 14;
     -fx-text-fill: #2196F3;
     -fx-cursor: hand;
@@ -261,7 +293,8 @@
 }
 
 .label-subtitle {
-    -fx-font-family: Roboto;
+    -fx-font-family: "Roboto";
+    -fx-font-weight: normal;
     -fx-font-size: 14;
     -fx-text-fill: #2196F3;
     -fx-alignment: center;
@@ -271,7 +304,8 @@
     -fx-background-color: transparent;
     -fx-border-width: 0 0 1 0;
     -fx-border-color: #2196F3;
-    -fx-font-family: Roboto;
+    -fx-font-family: "Roboto";
+    -fx-font-weight: normal;
     -fx-font-size: 15;
     -fx-text-fill: #2196F3;
     -fx-prompt-text-fill: #90caf9;
@@ -311,7 +345,8 @@
 .combo-box .cell {
     -fx-background-color: white;
     -fx-text-fill: #2196F3;
-    -fx-font-family: Roboto;
+    -fx-font-family: "Roboto";
+    -fx-font-weight: normal;
     -fx-font-size: 14;
 }
 

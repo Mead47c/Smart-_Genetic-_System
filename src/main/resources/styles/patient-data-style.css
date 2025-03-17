@@ -1,3 +1,23 @@
+@font-face {
+    -fx-font-family: "Montserrat";
+    src: url("../fonts/Montserrat-Regular.ttf");
+}
+
+@font-face {
+    -fx-font-family: "Montserrat-Black";
+    src: url("../fonts/Montserrat-Black.ttf");
+}
+
+@font-face {
+    -fx-font-family: "Roboto";
+    src: url("../fonts/Roboto-Regular.ttf");
+}
+
+@font-face {
+    -fx-font-family: "Roboto-Black";
+    src: url("../fonts/Roboto-Black.ttf");
+}
+
 .root-pane {
     -fx-background-color: #fff;
 }
@@ -12,10 +32,17 @@
 }
 
 .title-label {
-    -fx-font-family: "Montserrat Black";
+    -fx-font-family: "Montserrat-Black";
+    -fx-font-weight: bold;
     -fx-font-size: 30;
     -fx-text-fill: #fff;
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.2, 0, 4);
+}
+
+.user-data-labels {
+    -fx-font-family: "Roboto";
+    -fx-font-weight: normal;
+    -fx-font-size: 16;
 }
 
 .left-pane {
@@ -43,6 +70,7 @@
     -fx-max-height: 45;
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.2, 0, 4);
     -fx-font-family: Roboto;
+    -fx-font-weight: normal;
     -fx-font-size: 18;
     -fx-text-fill: #fff;
     -fx-cursor: hand;
@@ -71,6 +99,10 @@
     -fx-background-image: url("../images/exit-red.png");
 }
 
+.search-container {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.2, 0, 4);
+}
+
 .search-field {
     -fx-background-color: transparent;
     -fx-border-width: 1px;
@@ -80,11 +112,11 @@
     -fx-min-height: 35;
     -fx-max-height: 35;
     -fx-font-family: Roboto;
+    -fx-font-weight: normal;
     -fx-font-size: 16;
     -fx-text-fill: #000;
     -fx-padding: 0 0 0 50;
     -fx-prompt-text-fill: #d2eafc;
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.2, 0, 4);
     -fx-cursor: text;
 }
 
@@ -98,6 +130,7 @@
     -fx-border-radius: 20;
     -fx-border-color: transparent;
     -fx-font-family: Roboto;
+    -fx-font-weight: normal;
     -fx-font-size: 16;
     -fx-text-fill: #fff;
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.2, 0, 4);
@@ -129,15 +162,16 @@
 .table-view .column-header {
     -fx-background-color: transparent;
     -fx-text-fill: #fff;
-    -fx-font-family: Roboto;
-    -fx-font-size: 14;
+    -fx-font-family: "Roboto-Black";
     -fx-font-weight: bold;
+    -fx-font-size: 14;
 }
 
 .table-view .table-row-cell {
     -fx-background-color: #fff;
     -fx-text-fill: #000;
     -fx-font-family: Roboto;
+    -fx-font-weight: normal;
     -fx-font-size: 14;
 }
 

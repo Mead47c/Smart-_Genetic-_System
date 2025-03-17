@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="200.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/23.0.1"
+            fx:controller="com.example.genessystem.dialog.Dialogs">
+    <top>
+        <HBox alignment="CENTER" spacing="110.0" styleClass="title-bar-style" stylesheets="@../styles/alert-style.css"
+              BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fitHeight="36.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../images/mainLogo-white.png"/>
+                    </image>
+                </ImageView>
+                <Label style="-fx-font-weight: bold;" styleClass="title-label" stylesheets="@../styles/alert-style.css"
+                       text="SYSTEM ALERT" textFill="WHITE">
+                    <font>
+                        <Font size="16.0"/>
+                    </font>
+                </Label>
+                <Button fx:id="info_alert_closeButton" mnemonicParsing="false" onAction="#infoAlertClose"
+                        prefHeight="30.0" prefWidth="30.0" styleClass="close-btn"
+                        stylesheets="@../styles/alert-style.css" textFill="WHITE">
+                    <font>
+                        <Font name="Comic Sans MS" size="13.0"/>
+                    </font>
+                    <HBox.margin>
+                        <Insets top="-1.0"/>
+                    </HBox.margin>
+                </Button>
+            </children>
+            <BorderPane.margin>
+                <Insets top="5.0"/>
+            </BorderPane.margin>
+        </HBox>
+    </top>
+    <center>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="alert-pane"
+                    stylesheets="@../styles/alert-style.css" BorderPane.alignment="CENTER">
+            <children>
+                <VBox alignment="CENTER_LEFT" layoutX="7.0" layoutY="1.0" prefHeight="94.0" prefWidth="338.0">
+                    <children>
+                        <Label fx:id="infoAlert_headerLabel" text="Header" textFill="#2196f3">
+                            <font>
+                                <Font name="System Bold" size="18.0"/>
+                            </font>
+                            <padding>
+                                <Insets bottom="5.0" left="5.0"/>
+                            </padding>
+                        </Label>
+                        <Line fx:id="line" endX="226.0928497314453" endY="0.592890202999115" startX="-100.0"/>
+                        <Label fx:id="infoAlert_contentLabel" text="Content Text" wrapText="true">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                            <padding>
+                                <Insets left="5.0" top="5.0"/>
+                            </padding>
+                        </Label>
+                    </children>
+                </VBox>
+                <Button fx:id="infoAlert_okButton" layoutX="165.0" layoutY="96.0" mnemonicParsing="false"
+                        onAction="#infoAlertOk" styleClass="ok-button" stylesheets="@../styles/alert-style.css"
+                        text="OK"/>
+                <ImageView fx:id="info_message_graphicNode" fitHeight="60.0" fitWidth="60.0" layoutX="363.0"
+                           layoutY="11.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../images/info-alert.png"/>
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+    </center>
+</BorderPane>

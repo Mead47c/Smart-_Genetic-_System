@@ -6,6 +6,25 @@
     -fx-background-position: center;
 }
  */
+@font-face {
+    -fx-font-family: "Montserrat";
+    src: url("../fonts/Montserrat-Regular.ttf");
+}
+
+@font-face {
+    -fx-font-family: "Montserrat-Black";
+    src: url("../fonts/Montserrat-Black.ttf");
+}
+
+@font-face {
+    -fx-font-family: "Roboto";
+    src: url("../fonts/Roboto-Regular.ttf");
+}
+
+@font-face {
+    -fx-font-family: "Roboto-Black";
+    src: url("../fonts/Roboto-Black.ttf");
+}
 
 .root {
     -fx-background-color: #f2f0ef;
@@ -25,6 +44,10 @@
     -fx-effect: dropshadow(gaussian, #1769aa, 10, 0.7, 2, 6);
 }
 
+.program-logo-shadow {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.7, 2, 6);
+}
+
 .login-pane {
     -fx-background-color: #fff;
     -fx-background-radius: 0 0 20 20;
@@ -33,6 +56,31 @@
     -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 8, 0, 0, 3);
 }
 
+.program-main-title-label {
+    -fx-font-family: "Roboto-Black";
+    -fx-font-weight: bold;
+    -fx-text-fill: #2196f3;
+    -fx-font-size: 30;
+}
+
+.title-label {
+    -fx-font-family: "Montserrat-Black";
+    -fx-font-weight: bold;
+    -fx-text-fill: #fff;
+    -fx-font-size: 35;
+}
+
+.subtitle-label {
+    -fx-font-family: "Roboto";
+    -fx-text-fill: #2196f3;
+    -fx-font-size: 14;
+}
+
+.status-labels {
+    -fx-font-family: "Roboto";
+    -fx-text-fill: #fc0000;
+    -fx-font-size: 14;
+}
 
 .text-field {
     -fx-background-color: transparent;
@@ -77,12 +125,14 @@
 }
 
 .hyperlink {
+    -fx-font-family: "Roboto";
     -fx-font-size: 14;
+    -fx-text-fill: #2196f3;
 }
 
 .signup-button {
     -fx-background-color: transparent;
-    -fx-font-family: Roboto;
+    -fx-font-family: "Roboto";
     -font-size: 13;
     -fx-text-fill: #2196F3;
     -fx-cursor: hand;

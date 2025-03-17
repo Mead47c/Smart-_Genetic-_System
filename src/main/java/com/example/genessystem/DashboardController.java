@@ -20,7 +20,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-import java.awt.*;
+import java.awt.Toolkit;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
@@ -28,7 +28,9 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
-public class DashboardController extends Application implements Initializable, UsernameReceiver {
+public class DashboardController implements Initializable, UsernameReceiver {
+
+    // ********************************* Declaration Area ***********************************
     @FXML
     public Label dashboard_usernameLabel;
 
@@ -56,9 +58,15 @@ public class DashboardController extends Application implements Initializable, U
     @FXML
     public PieChart dashboard_pieChart;
 
-    public static void main(String[] args) {
-        launch(args);
-    }
+    @FXML
+    public Button dashboard_reportsButton;
+
+    // ****************************** END OF Declaration Area ********************************
+
+
+    // *********************************************************************************************
+    // ******************************  Setting Screen Requirements  ********************************
+    // *********************************************************************************************
 
     @Override
     public void setUsername(String username) {
@@ -74,12 +82,31 @@ public class DashboardController extends Application implements Initializable, U
         dashboard_loginTimeLabel.setText(LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss")));
     }
 
+    @FXML
+    public void logout(ActionEvent event) {
+        String username = dashboard_usernameLabel.getText();
+        Toolkit.getDefaultToolkit().beep();
+
+        Dialogs.showConfirmationAlert("Logout!",
+                "You are about to close the program and go back to the login screen.\nAre you sure?",
+                () -> Main.switchScreen("login-view.fxml", username));
+    }
+
+    @FXML
     public void closeProgram(ActionEvent actionEvent) {
         Toolkit.getDefaultToolkit().beep();
-        boolean response = Dialogs.showConfirmationAlert("Close Program?", "You are about to close the program!\nAre you sure?", true);
-        if (response) {
-            Platform.exit();
-        }
+
+        Dialogs.showConfirmationAlert("Close Program?",
+                "You are about to close the program!\nAre you sure?",
+                () -> ((Stage) dashboard_root.getScene().getWindow()).close());
+    }
+
+    public void buttonEffects() {
+        Effects.buttonEffect(dashboard_patientDataButton);
+        Effects.buttonEffect(dashboard_diagnosticsButton);
+        Effects.buttonEffect(dashboard_logoutButton);
+        Effects.buttonEffect(dashboard_reportsButton);
+        Effects.buttonEffect(dashboard_exit);
     }
 
 
@@ -87,6 +114,28 @@ public class DashboardController extends Application implements Initializable, U
     // **********************************  Switch among Screens  ***********************************
     // *********************************************************************************************
 
+    @FXML
+    public void switchToPatientData(ActionEvent event) {
+        String username = dashboard_usernameLabel.getText();
+        Main.switchScreen("patient-data-view.fxml", username);
+    }
+
+    @FXML
+    public void switchToDiagnostics(ActionEvent actionEvent) {
+        String username = dashboard_usernameLabel.getText();
+        Main.switchScreen("diagnostics-view.fxml", username);
+    }
+
+    @FXML
+    public void switchToReports(ActionEvent actionEvent) {
+        String username = dashboard_usernameLabel.getText();
+        Main.switchScreen("reports-view.fxml", username);
+    }
+
+
+    // *********************************************************************************************
+    // *************************************  Visualization  ***************************************
+    // *********************************************************************************************
     public void showPieChart() {
         dashboard_pieChart.setTitle(null);
         dashboard_pieChart.setLegendVisible(false);
@@ -103,36 +152,15 @@ public class DashboardController extends Application implements Initializable, U
         dashboard_pieChart.setData(pieChartData);
     }
 
-    @FXML
-    public void switchToPatientData(ActionEvent event) {
-        String username = dashboard_usernameLabel.getText();
-        Main.switchScreen("patient-data-view.fxml", username);
-    }
 
-    @FXML
-    public void logout(ActionEvent event) {
-        String username = dashboard_usernameLabel.getText();
-        Toolkit.getDefaultToolkit().beep();
-        boolean response = Dialogs.showConfirmationAlert(null, "You are about " +
-                "to close the program and go back to the login screen\nAre you sure?", true);
-        if (response) {
-            Main.switchScreen("login-view.fxml", username);
-        }
-    }
-
+    // *********************************************************************************************
+    // ***************************************  Initialize  ****************************************
+    // *********************************************************************************************
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        buttonEffects();
         setLoginTime();
         showPieChart();
-    }
-
-    public void start(Stage stage) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("dashboard-view.fxml"));
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.initStyle(StageStyle.UNDECORATED);
-        Effects.movableStage(stage, root);
-        stage.show();
     }
 }
 

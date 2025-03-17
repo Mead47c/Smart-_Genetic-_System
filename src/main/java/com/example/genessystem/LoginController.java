@@ -125,10 +125,9 @@ public class LoginController implements Initializable {
     @FXML
     public void closeApplication() {
         Toolkit.getDefaultToolkit().beep();
-        boolean response = Dialogs.showConfirmationAlert("Close the program?", "You are about to close the program.\nAre you sure?", true);
-        if (response) {
-            Platform.exit();
-        }
+        Dialogs.showConfirmationAlert("Close Program?",
+                "You are about to close the program!\nAre you sure?",
+                () -> ((Stage) root.getScene().getWindow()).close());
     }
 
     // show or hide password
@@ -342,12 +341,12 @@ public class LoginController implements Initializable {
     @FXML
     public void login(ActionEvent event) {
         if (loginScreen_usernameField.getText().isEmpty()) {
-            Dialogs.showErrorAlert(null, "Username is required");
+            Dialogs.showAlertMessage("Username Required!", "Cannot leave username Empty!!!", Dialogs.MessageType.ERROR_MESSAGE);
             return;
         }
 
         if (loginScreen_passwordField.getText().isEmpty()) {
-            Dialogs.showErrorAlert(null, "Password is required");
+            Dialogs.showAlertMessage("Password Required!", "Cannot leave password Empty!!!", Dialogs.MessageType.ERROR_MESSAGE);
             return;
         }
 
@@ -361,17 +360,17 @@ public class LoginController implements Initializable {
             ResultSet rs = pstmt.executeQuery();
 
             if (rs.next()) {
-                Dialogs.showAndWaitInfoAlert(null, "Welcome back: " + username + " :)");
+                Dialogs.showAlertMessage("Success", "Welcome back: " + username + " :)", Dialogs.MessageType.INFO_MESSAGE);
                 Effects.fadeOut(root, Duration.millis(500), 1, () -> {
                     Main.switchScreen("dashboard-view.fxml", username);
                     Effects.fadeIn(Main.primaryStage.getScene().getRoot(), Duration.millis(500), 1);
                 });
 
             } else {
-                Dialogs.showErrorAlert(null, "Invalid Username or Password");
+                Dialogs.showAlertMessage("Failed!!!", "Invalid Username or Password", Dialogs.MessageType.ERROR_MESSAGE);
             }
         } catch (SQLException ex) {
-            Dialogs.showErrorAlert(null, ex.getMessage());
+            Dialogs.showAlertMessage("System Error!", ex.getMessage(), Dialogs.MessageType.ERROR_MESSAGE);
         }
     }
 
@@ -388,7 +387,7 @@ public class LoginController implements Initializable {
         if (signupScreen_usernameField.getText().isEmpty()
                 || signupScreen_repeatPasswordField.getText().isEmpty()
                 || signupScreen_emailField.getText().isEmpty()) {
-            Dialogs.showErrorAlert("Error Message", "Please fill all the fields correctly.");
+            Dialogs.showAlertMessage("Error!", "Please fill all the fields correctly.", Dialogs.MessageType.ERROR_MESSAGE);
             return;
         }
 
@@ -401,11 +400,11 @@ public class LoginController implements Initializable {
             ResultSet resultSet = preparedStatement.executeQuery();
 
             if (resultSet.next()) {
-                Dialogs.showErrorAlert(null, "Username is already in use");
+                Dialogs.showAlertMessage("Failed", "User already exists", Dialogs.MessageType.ERROR_MESSAGE);
                 return;
             }
         } catch (SQLException ex) {
-            Dialogs.showErrorAlert(null, ex.getMessage());
+            Dialogs.showAlertMessage("System Error!", ex.getMessage(), Dialogs.MessageType.ERROR_MESSAGE);
         }
 
         query = "Select email from accounts where email = ?";
@@ -414,11 +413,11 @@ public class LoginController implements Initializable {
             ResultSet resultSet = preparedStatement.executeQuery();
 
             if (resultSet.next()) {
-                Dialogs.showErrorAlert(null, "Email is already in use");
+                Dialogs.showAlertMessage("Failed", "Email is already in use", Dialogs.MessageType.ERROR_MESSAGE);
                 return;
             }
         } catch (SQLException ex) {
-            Dialogs.showErrorAlert(null, ex.getMessage());
+            Dialogs.showAlertMessage("System Error!", ex.getMessage(), Dialogs.MessageType.ERROR_MESSAGE);
         }
 
         String otp;
@@ -513,7 +512,7 @@ public class LoginController implements Initializable {
             if (enteredOTP.toString().equals(String.valueOf(generatedOTP))) {
                 ((Stage) root.getScene().getWindow()).close();
                 saveNewAcoountCredintials();
-                Dialogs.showAndWaitInfoAlert(null, "Your account has been created successfully.");
+                Dialogs.showAlertMessage("Success", "Your account has been created successfully.", Dialogs.MessageType.INFO_MESSAGE);
 
                 clearSignup();
                 Effects.fadeOut(mainTitleLabel, Duration.millis(500), 1, () -> {
@@ -557,7 +556,7 @@ public class LoginController implements Initializable {
             preparedStatement.setString(3, email);
             preparedStatement.executeUpdate();
         } catch (SQLException ex) {
-            Dialogs.showErrorAlert(null, ex.getMessage());
+            Dialogs.showAlertMessage("System Error", ex.getMessage(), Dialogs.MessageType.ERROR_MESSAGE);
         }
     }
 
