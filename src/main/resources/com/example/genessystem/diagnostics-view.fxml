@@ -1,81 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.String?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
-
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
 <BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:id="diagnostics_root" maxHeight="-Infinity" maxWidth="-Infinity"
-            minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0"
-            styleClass="root-pane" stylesheets="@../../../styles/patient-data-style.css"
+            minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1400.0"
+            styleClass="root-pane" stylesheets="@../../../styles/diagnostics-style.css"
             xmlns="http://javafx.com/javafx/23.0.1" fx:controller="com.example.genessystem.DiagnosticsController">
     <top>
-        <HBox alignment="CENTER_LEFT" prefHeight="150.0" prefWidth="1000.0" styleClass="top-pane"
-              stylesheets="@../../../styles/diagnostics-style.css" BorderPane.alignment="CENTER">
+        <HBox alignment="CENTER_LEFT" prefHeight="173.0" prefWidth="1505.0" styleClass="top-pane"
+              stylesheets="@../../../styles/reports-style.css" BorderPane.alignment="CENTER">
             <children>
-                <VBox alignment="CENTER" spacing="5.0">
+                <HBox prefHeight="160.0" prefWidth="426.0">
                     <children>
-                        <StackPane>
+                        <Text fx:id="diagnostics_mainTitleText" strokeType="OUTSIDE" strokeWidth="0.0"
+                              styleClass="text-title" text="SGS"/>
+                        <VBox alignment="CENTER" prefHeight="160.0" prefWidth="210.0" spacing="5.0">
                             <children>
-                                <Label minWidth="277.0" prefHeight="93.0" prefWidth="318.0" styleClass="title-label"
-                                       stylesheets="@../../../styles/diagnostics-style.css" text="Smart Genetic System"
-                                       textAlignment="CENTER" wrapText="true">
-                                </Label>
-                                <Label text="©" textFill="WHITE">
+                                <StackPane prefHeight="46.0" prefWidth="218.0">
+                                    <children>
+                                        <Label minWidth="59.0" prefHeight="46.0" prefWidth="315.0"
+                                               styleClass="title-label" stylesheets="@../../../styles/reports-style.css"
+                                               text="Smart Genetic System" textAlignment="CENTER" wrapText="true"/>
+                                    </children>
+                                </StackPane>
+                                <Label style="-fx-alignment: center;" text="V3.002">
                                     <font>
-                                        <Font name="Consolas" size="25.0"/>
+                                        <Font name="Consolas" size="14.0"/>
                                     </font>
-                                    <StackPane.margin>
-                                        <Insets left="150.0" top="30.0"/>
-                                    </StackPane.margin>
                                 </Label>
                             </children>
-                        </StackPane>
-                        <Label text="V1.001">
-                            <font>
-                                <Font name="Consolas" size="14.0"/>
-                            </font>
-                        </Label>
+                        </VBox>
                     </children>
-                </VBox>
+                </HBox>
                 <StackPane minWidth="250.0">
                     <children>
                         <VBox alignment="CENTER_LEFT" prefWidth="100.0" spacing="5.0">
                             <children>
-                                <Label styleClass="user-data-labels"
-                                       stylesheets="@../../../styles/patient-data-style.css" text="Username:">
-                                </Label>
+                                <Label styleClass="user-data-labels" stylesheets="@../../../styles/reports-style.css"
+                                       text="Username:"/>
                                 <Label fx:id="diagnostics_usernameLabel" style="-fx-font-weight: bold;"
-                                       styleClass="user-data-labels"
-                                       stylesheets="@../../../styles/patient-data-style.css" text="Label"
-                                       textFill="WHITE" wrapText="true">
-                                </Label>
+                                       styleClass="user-data-labels" stylesheets="@../../../styles/reports-style.css"
+                                       text="Label" textFill="WHITE" wrapText="true"/>
                                 <Label layoutX="60.0" layoutY="64.0" styleClass="user-data-labels"
-                                       stylesheets="@../../../styles/patient-data-style.css" text="Login Time:">
-                                </Label>
+                                       stylesheets="@../../../styles/reports-style.css" text="Login Time:"/>
                                 <Label fx:id="diagnostics_loginDateLabel" layoutX="79.0" layoutY="76.0"
                                        nodeOrientation="RIGHT_TO_LEFT" style="-fx-font-weight: bold;"
-                                       styleClass="user-data-labels"
-                                       stylesheets="@../../../styles/patient-data-style.css" text="Label"
-                                       textFill="WHITE" wrapText="true">
-                                </Label>
+                                       styleClass="user-data-labels" stylesheets="@../../../styles/reports-style.css"
+                                       text="Label" textFill="WHITE" wrapText="true"/>
                                 <Label fx:id="diagnostics_loginTimeLabel" layoutX="10.0" layoutY="112.0"
                                        nodeOrientation="RIGHT_TO_LEFT" style="-fx-font-weight: bold;"
-                                       styleClass="user-data-labels"
-                                       stylesheets="@../../../styles/patient-data-style.css" text="Label"
-                                       textFill="WHITE" wrapText="true">
-                                </Label>
+                                       styleClass="user-data-labels" stylesheets="@../../../styles/reports-style.css"
+                                       text="Label" textFill="WHITE" wrapText="true"/>
                             </children>
                         </VBox>
                         <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
@@ -88,7 +68,7 @@
                         </ImageView>
                     </children>
                     <HBox.margin>
-                        <Insets left="630.0"/>
+                        <Insets left="700.0"/>
                     </HBox.margin>
                 </StackPane>
             </children>
@@ -99,127 +79,486 @@
     </top>
     <left>
         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="150.0" spacing="20.0" styleClass="left-pane"
-              stylesheets="@../../../styles/patient-data-style.css" BorderPane.alignment="CENTER">
+              stylesheets="@../../../styles/diagnostics-style.css" BorderPane.alignment="CENTER">
             <BorderPane.margin>
                 <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
             </BorderPane.margin>
             <children>
                 <Button fx:id="diagnostics_dashboardButton" mnemonicParsing="false" onAction="#switchToDashboard"
-                        styleClass="nav-buttons" stylesheets="@../../../styles/patient-data-style.css"
-                        text="Dashboard"/>
+                        styleClass="nav-buttons" stylesheets="@../../../styles/diagnostics-style.css" text="Dashboard"/>
                 <Button fx:id="diagnostics_patientDataButton" mnemonicParsing="false" onAction="#switchToPatientData"
-                        styleClass="nav-buttons" stylesheets="@../../../styles/patient-data-style.css"
+                        styleClass="nav-buttons" stylesheets="@../../../styles/diagnostics-style.css"
                         text="Patient Data"/>
                 <Button fx:id="patientData_diagnosticsButton" disable="true" mnemonicParsing="false"
-                        styleClass="nav-buttons" stylesheets="@../../../styles/patient-data-style.css"
+                        styleClass="nav-buttons" stylesheets="@../../../styles/diagnostics-style.css"
                         text="Diagnostics"/>
                 <Button fx:id="diagnostics_reportsButton" layoutX="11.0" layoutY="235.0" mnemonicParsing="false"
                         onAction="#switchToReports" styleClass="nav-buttons"
-                        stylesheets="@../../../styles/patient-data-style.css" text="Reports"/>
+                        stylesheets="@../../../styles/diagnostics-style.css" text="Reports"/>
                 <Button fx:id="diagnostics_logoutButton" mnemonicParsing="false" onAction="#logout"
-                        styleClass="nav-buttons" stylesheets="@../../../styles/patient-data-style.css" text="Logout"/>
+                        styleClass="nav-buttons" stylesheets="@../../../styles/diagnostics-style.css" text="Logout"/>
                 <Button fx:id="diagnostics_exit" mnemonicParsing="false" onAction="#closeProgram"
-                        styleClass="nav-close-button" stylesheets="@../../../styles/patient-data-style.css"/>
+                        styleClass="nav-close-button" stylesheets="@../../../styles/diagnostics-style.css"/>
             </children>
         </VBox>
     </left>
     <center>
         <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="center-pane"
-                    stylesheets="@../../../styles/patient-data-style.css" BorderPane.alignment="CENTER">
+                    stylesheets="@../../../styles/diagnostics-style.css" BorderPane.alignment="CENTER">
             <BorderPane.margin>
                 <Insets bottom="10.0" right="10.0" top="10.0"/>
             </BorderPane.margin>
             <children>
-                <HBox layoutX="14.0" layoutY="14.0" spacing="10.0"/>
-                <HBox layoutX="210.0" layoutY="87.0" spacing="20.0">
+                <VBox alignment="CENTER" layoutX="16.0" layoutY="12.0" prefHeight="200.0" prefWidth="684.0"
+                      spacing="10.0" style="-fx-border-color: #2196F3; -fx-border-radius: 8;">
                     <children>
-                        <VBox alignment="CENTER" spacing="5.0">
+                        <HBox alignment="CENTER_LEFT" prefHeight="166.0" prefWidth="562.0" spacing="20.0">
                             <children>
-                                <Label styleClass="label-subtitle"
-                                       stylesheets="@../../../styles/add-new-patient-style.css" text="Disease">
-                                    <VBox.margin>
-                                        <Insets right="30.0"/>
-                                    </VBox.margin>
-                                </Label>
-                                <HBox spacing="5.0">
+                                <VBox alignment="CENTER" prefHeight="157.0" prefWidth="286.0" spacing="10.0"
+                                      style="-fx-background-color: #90caf9; -fx-background-radius: 8;">
                                     <children>
-                                        <Button disable="true" mnemonicParsing="false"
-                                                stylesheets="@../../../styles/add-new-patient-style.css">
-                                            <styleClass>
-                                                <String fx:value="icon-button"/>
-                                                <String fx:value="disease-button"/>
-                                            </styleClass>
-                                        </Button>
-                                        <ComboBox fx:id="diagnostics_diseaseCombobox" prefWidth="150.0"
-                                                  promptText="Choose..."/>
+                                        <Label prefHeight="61.0" prefWidth="192.0"
+                                               style="-fx-text-fill: #104b79; -fx-underline: true;"
+                                               styleClass="subtitle-label"
+                                               stylesheets="@../../../styles/diagnostics-style.css"
+                                               text="Search for a patient By National ID or Medical Record"
+                                               textAlignment="CENTER" wrapText="true">
+                                            <padding>
+                                                <Insets top="10.0"/>
+                                            </padding>
+                                        </Label>
+                                        <TextField fx:id="diagnostics_nationalIdField" alignment="CENTER"
+                                                   promptText="National ID"
+                                                   style="-fx-text-fill: #104b79; -fx-prompt-text-fill: #fff;"
+                                                   stylesheets="@../../../styles/diagnostics-style.css"/>
+                                        <TextField fx:id="diagnostics_medicalRecField" alignment="CENTER"
+                                                   promptText="Medical Record"
+                                                   style="-fx-text-fill: #104b79; -fx-prompt-text-fill: #fff;"
+                                                   styleClass="fie"
+                                                   stylesheets="@../../../styles/diagnostics-style.css"/>
                                     </children>
-                                </HBox>
+                                    <HBox.margin>
+                                        <Insets/>
+                                    </HBox.margin>
+                                    <padding>
+                                        <Insets bottom="10.0" left="10.0" right="10.0"/>
+                                    </padding>
+                                </VBox>
+                                <VBox alignment="CENTER" prefHeight="136.0" prefWidth="303.0" spacing="10.0">
+                                    <children>
+                                        <HBox spacing="20.0">
+                                            <children>
+                                                <TextField fx:id="diagnostics_firstNameField" alignment="CENTER"
+                                                           disable="true" promptText="First Name"
+                                                           style="-fx-opacity: 1.0;" styleClass="fie"
+                                                           stylesheets="@../../../styles/diagnostics-style.css"/>
+                                                <TextField fx:id="diagnostics_lastNameField" alignment="CENTER"
+                                                           disable="true" promptText="Last Name"
+                                                           style="-fx-opacity: 1.0;" styleClass="fie"
+                                                           stylesheets="@../../../styles/diagnostics-style.css"/>
+                                            </children>
+                                            <VBox.margin>
+                                                <Insets top="65.0"/>
+                                            </VBox.margin>
+                                        </HBox>
+                                        <HBox spacing="20.0">
+                                            <children>
+                                                <TextField fx:id="diagnostics_ageField" alignment="CENTER"
+                                                           disable="true" promptText="Age" style="-fx-opacity: 1.0;"
+                                                           stylesheets="@../../../styles/diagnostics-style.css"/>
+                                                <TextField fx:id="diagnostics_genderField" alignment="CENTER"
+                                                           disable="true" promptText="Gender" style="-fx-opacity: 1.0;"
+                                                           styleClass="fie"
+                                                           stylesheets="@../../../styles/diagnostics-style.css"/>
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                    <HBox.margin>
+                                        <Insets left="20.0"/>
+                                    </HBox.margin>
+                                </VBox>
+                            </children>
+                            <padding>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                            </padding>
+                        </HBox>
+                    </children>
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                    </padding>
+                </VBox>
+                <HBox fx:id="diseasePane" alignment="CENTER_LEFT" disable="true" layoutX="729.0" layoutY="12.0"
+                      prefHeight="200.0" prefWidth="470.0" spacing="40.0"
+                      style="-fx-border-color: #2196F3; -fx-border-radius: 8;">
+                    <children>
+                        <VBox prefHeight="243.0" prefWidth="235.0" spacing="10.0">
+                            <children>
+                                <VBox alignment="CENTER_LEFT" prefHeight="110.0" prefWidth="235.0" spacing="5.0">
+                                    <children>
+                                        <Label prefHeight="18.0" prefWidth="71.0" styleClass="label-subtitle"
+                                               stylesheets="@../../../styles/add-new-patient-style.css"
+                                               text="1) Disease">
+                                            <VBox.margin>
+                                                <Insets right="30.0"/>
+                                            </VBox.margin>
+                                        </Label>
+                                        <HBox spacing="5.0">
+                                            <children>
+                                                <Button disable="true" mnemonicParsing="false"
+                                                        stylesheets="@../../../styles/diagnostics-style.css">
+                                                    <styleClass>
+                                                        <String fx:value="icon-button"/>
+                                                        <String fx:value="disease-name-button"/>
+                                                    </styleClass>
+                                                </Button>
+                                                <ComboBox fx:id="diagnostics_diseaseCombobox" editable="true"
+                                                          prefWidth="150.0" promptText="Choose..."
+                                                          styleClass="combo-box"
+                                                          stylesheets="@../../../styles/diagnostics-style.css"/>
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+                                <VBox alignment="CENTER_LEFT" prefHeight="110.0" spacing="5.0">
+                                    <children>
+                                        <Label styleClass="label-subtitle"
+                                               stylesheets="@../../../styles/add-new-patient-style.css"
+                                               text="2) Gene Condition" textAlignment="CENTER" wrapText="true">
+                                            <VBox.margin>
+                                                <Insets right="30.0"/>
+                                            </VBox.margin>
+                                        </Label>
+                                        <HBox alignment="CENTER_LEFT" spacing="5.0">
+                                            <children>
+                                                <Button disable="true" mnemonicParsing="false"
+                                                        stylesheets="@../../../styles/diagnostics-style.css">
+                                                    <styleClass>
+                                                        <String fx:value="icon-button"/>
+                                                        <String fx:value="gene-condition-button"/>
+                                                    </styleClass>
+                                                </Button>
+                                                <VBox spacing="2.0">
+                                                    <children>
+                                                        <RadioButton fx:id="diagnostics_injuredRadioButton"
+                                                                     mnemonicParsing="false" text="Injured"/>
+                                                        <RadioButton fx:id="diagnostics_safeRadioButton"
+                                                                     mnemonicParsing="false" text="Safe"/>
+                                                        <RadioButton fx:id="diagnostics_carrierRadioButton"
+                                                                     mnemonicParsing="false" text="Carrier"/>
+                                                    </children>
+                                                </VBox>
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </VBox>
                             </children>
                         </VBox>
-                        <VBox alignment="CENTER" spacing="5.0">
+                        <VBox prefHeight="209.0" prefWidth="148.0">
                             <children>
-                                <Label styleClass="label-subtitle"
-                                       stylesheets="@../../../styles/add-new-patient-style.css" text="Disease Condition"
-                                       textAlignment="CENTER" wrapText="true">
-                                    <VBox.margin>
-                                        <Insets right="30.0"/>
-                                    </VBox.margin>
-                                </Label>
-                                <HBox spacing="5.0">
+                                <VBox alignment="CENTER_LEFT" prefHeight="110.0" prefWidth="235.0" spacing="5.0">
                                     <children>
-                                        <Button disable="true" mnemonicParsing="false"
-                                                stylesheets="@../../../styles/add-new-patient-style.css">
-                                            <styleClass>
-                                                <String fx:value="icon-button"/>
-                                                <String fx:value="disease-button"/>
-                                            </styleClass>
-                                        </Button>
-                                        <ComboBox fx:id="diagnostics_diseaseConditionCombobox" prefWidth="150.0"
-                                                  promptText="Choose..."/>
+                                        <Label prefHeight="42.0" prefWidth="135.0" styleClass="label-subtitle"
+                                               stylesheets="@../../../styles/add-new-patient-style.css"
+                                               text="3) First-Degree Relatives Count" wrapText="true">
+                                            <VBox.margin>
+                                                <Insets right="30.0"/>
+                                            </VBox.margin>
+                                        </Label>
+                                        <HBox alignment="CENTER_LEFT" spacing="5.0">
+                                            <children>
+                                                <Button disable="true" mnemonicParsing="false"
+                                                        stylesheets="@../../../styles/diagnostics-style.css">
+                                                    <styleClass>
+                                                        <String fx:value="icon-button"/>
+                                                        <String fx:value="first-relative-button"/>
+                                                    </styleClass>
+                                                </Button>
+                                                <Spinner fx:id="diagnostics_firstDegreeSpinner" editable="true"/>
+                                            </children>
+                                        </HBox>
                                     </children>
-                                </HBox>
-                            </children>
                         </VBox>
-                        <VBox alignment="CENTER" spacing="5.0">
-                            <children>
-                                <Label styleClass="label-subtitle"
-                                       stylesheets="@../../../styles/add-new-patient-style.css" text="Degree of Kinship"
-                                       textAlignment="CENTER" wrapText="true">
-                                    <VBox.margin>
-                                        <Insets right="30.0"/>
-                                    </VBox.margin>
-                                </Label>
-                                <HBox spacing="5.0">
+                                <VBox alignment="CENTER_LEFT" prefHeight="110.0" prefWidth="148.0" spacing="5.0">
                                     <children>
-                                        <Button disable="true" mnemonicParsing="false"
-                                                stylesheets="@../../../styles/add-new-patient-style.css">
-                                            <styleClass>
-                                                <String fx:value="icon-button"/>
-                                                <String fx:value="kinship-button"/>
-                                            </styleClass>
-                                        </Button>
-                                        <ComboBox fx:id="diagnostics_kinshipCombobox" prefWidth="150.0"
-                                                  promptText="Choose..."/>
+                                        <Label prefHeight="38.0" prefWidth="134.0" styleClass="label-subtitle"
+                                               stylesheets="@../../../styles/add-new-patient-style.css"
+                                               text="4) Second-Degree Relatives Count" wrapText="true">
+                                            <VBox.margin>
+                                                <Insets right="30.0"/>
+                                            </VBox.margin>
+                                        </Label>
+                                        <HBox alignment="CENTER_LEFT" spacing="5.0">
+                                            <children>
+                                                <Button disable="true" mnemonicParsing="false"
+                                                        stylesheets="@../../../styles/diagnostics-style.css">
+                                                    <styleClass>
+                                                        <String fx:value="icon-button"/>
+                                                        <String fx:value="second-relative-button"/>
+                                                    </styleClass>
+                                                </Button>
+                                                <Spinner fx:id="diagnostics_secondDegreeSpinner" editable="true"/>
+                                            </children>
+                                        </HBox>
                                     </children>
-                                </HBox>
+                        </VBox>
                             </children>
                         </VBox>
                     </children>
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                    </padding>
                 </HBox>
-                <HBox layoutX="57.0" layoutY="24.0" spacing="20.0">
+                <Label layoutX="56.0" layoutY="4.0" style="-fx-text-fill: #2196F3; -fx-background-color: #fff;"
+                       styleClass="subtitle-label" stylesheets="@../../../styles/diagnostics-style.css"
+                       text="Patients Data">
+                    <padding>
+                        <Insets left="10.0" right="10.0"/>
+                    </padding>
+                </Label>
+                <Label layoutX="767.0" layoutY="4.0" style="-fx-text-fill: #2196F3; -fx-background-color: #fff;"
+                       styleClass="subtitle-label" stylesheets="@../../../styles/diagnostics-style.css"
+                       text="Disease Details">
+                    <padding>
+                        <Insets left="10.0" right="10.0"/>
+                    </padding>
+                </Label>
+                <HBox fx:id="analysisPane" alignment="CENTER" disable="true" layoutX="27.0" layoutY="232.0"
+                      prefHeight="306.0" prefWidth="1171.0" spacing="20.0">
                     <children>
-                        <TextField promptText="National ID" styleClass="fie"
-                                   stylesheets="@../../../styles/diagnostics-style.css"/>
-                        <TextField promptText="Medical Record" styleClass="fie"
-                                   stylesheets="@../../../styles/diagnostics-style.css"/>
+                        <VBox alignment="CENTER" maxHeight="334.0" minHeight="220.0" prefHeight="306.0"
+                              prefWidth="320.0" spacing="10.0" style="-fx-border-color: #2196F3; -fx-border-radius: 8;">
+                            <children>
+                                <StackPane fx:id="chatGptStackPane"/>
+                                <StackPane fx:id="deepseekStackPane"/>
+                                <StackPane fx:id="wikipediaStackPane">
+                                    <children>
+                                        <TextFlow fx:id="wikipediaTextFlow" maxHeight="40.0" prefHeight="18.0"
+                                                  prefWidth="200.0" styleClass="buttons-text-flow"
+                                                  stylesheets="@../../../styles/diagnostics-style.css">
+                                            <padding>
+                                                <Insets right="10.0"/>
+                                            </padding>
+                                            <StackPane.margin>
+                                                <Insets left="20.0"/>
+                                            </StackPane.margin>
+                                        </TextFlow>
+                                        <Button fx:id="diagnostics_pubMedButton" maxWidth="301.0"
+                                                mnemonicParsing="false" onAction="#getWikipediaSummary"
+                                                prefHeight="40.0" prefWidth="301.0"
+                                                stylesheets="@../../../styles/diagnostics-style.css"
+                                                textAlignment="CENTER" wrapText="true">
+                                            <styleClass>
+                                                <String fx:value="diagnose-button"/>
+                                                <String fx:value="wikipedia"/>
+                                            </styleClass>
+                                        </Button>
+                                    </children>
+                                </StackPane>
+                                <StackPane fx:id="sgsStackPane">
+                                    <children>
+                                        <TextFlow fx:id="sgsTextFlow" maxHeight="40.0" prefHeight="18.0"
+                                                  prefWidth="200.0" styleClass="buttons-text-flow"
+                                                  stylesheets="@../../../styles/diagnostics-style.css">
+                                            <padding>
+                                                <Insets right="10.0"/>
+                                            </padding>
+                                            <StackPane.margin>
+                                                <Insets left="20.0"/>
+                                            </StackPane.margin>
+                                        </TextFlow>
+                                        <Button fx:id="diagnostics_sgsButton" maxWidth="301.0" mnemonicParsing="false"
+                                                onAction="#performSGSAnalysis" prefHeight="40.0" prefWidth="301.0"
+                                                stylesheets="@../../../styles/diagnostics-style.css"
+                                                textAlignment="CENTER" wrapText="true">
+                                            <styleClass>
+                                                <String fx:value="diagnose-button"/>
+                                                <String fx:value="sgs"/>
+                                            </styleClass>
+                                        </Button>
+                                    </children>
+                                    <VBox.margin>
+                                        <Insets bottom="10.0"/>
+                                    </VBox.margin>
+                                </StackPane>
+                                <StackPane fx:id="saveAnalysisStackPane">
+                                    <children>
+                                        <TextFlow fx:id="saveAnalysisTextFlow" maxHeight="40.0" prefHeight="18.0"
+                                                  prefWidth="200.0" styleClass="buttons-text-flow"
+                                                  stylesheets="@../../../styles/diagnostics-style.css">
+                                            <padding>
+                                                <Insets right="10.0"/>
+                                            </padding>
+                                            <StackPane.margin>
+                                                <Insets left="20.0"/>
+                                            </StackPane.margin>
+                                        </TextFlow>
+                                        <Button fx:id="diagnostics_saveButton" disable="true" maxWidth="301.0"
+                                                mnemonicParsing="false" onAction="#saveAnalysis" prefHeight="40.0"
+                                                prefWidth="301.0" stylesheets="@../../../styles/diagnostics-style.css">
+                                            <styleClass>
+                                                <String fx:value="diagnose-button"/>
+                                                <String fx:value="save-button"/>
+                                            </styleClass>
+                                        </Button>
+                                    </children>
+                                    <VBox.margin>
+                                        <Insets top="10.0"/>
+                                    </VBox.margin>
+                                </StackPane>
+                                <StackPane fx:id="clearEverythingStackPane" layoutX="21.0" layoutY="179.0">
+                                    <children>
+                                        <TextFlow fx:id="clearEverythingTextFlow" maxHeight="40.0" prefHeight="18.0"
+                                                  prefWidth="200.0" styleClass="buttons-text-flow"
+                                                  stylesheets="@../../../styles/diagnostics-style.css">
+                                            <padding>
+                                                <Insets right="10.0"/>
+                                            </padding>
+                                            <StackPane.margin>
+                                                <Insets left="20.0"/>
+                                            </StackPane.margin>
+                                        </TextFlow>
+                                        <Button fx:id="diagnostics_clearButton" maxWidth="301.0" mnemonicParsing="false"
+                                                onAction="#clearEverything" prefHeight="40.0" prefWidth="301.0"
+                                                stylesheets="@../../../styles/diagnostics-style.css">
+                                            <styleClass>
+                                                <String fx:value="diagnose-button"/>
+                                                <String fx:value="clear-button"/>
+                                            </styleClass>
+                                        </Button>
+                                    </children>
+                                </StackPane>
+                            </children>
+                            <padding>
+                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                            </padding>
+                        </VBox>
+                        <HBox spacing="10.0" style="-fx-border-color: #2196F3; -fx-border-radius: 8;">
+                            <children>
+                                <StackPane prefHeight="306.0" prefWidth="680.0">
+                                    <children>
+                                        <TextArea fx:id="analysisTextArea" editable="false" maxWidth="874.0"
+                                                  minWidth="419.0" prefHeight="282.0" prefWidth="581.0"
+                                                  stylesheets="@../../../styles/diagnostics-style.css" wrapText="true"/>
+                                        <ImageView fx:id="progressIndicator" fitHeight="85.0" fitWidth="87.0"
+                                                   pickOnBounds="true" preserveRatio="true" visible="false">
+                                            <image>
+                                                <Image url="@../../../images/loading.gif"/>
+                                            </image>
+                                        </ImageView>
+                                    </children>
+                                    <padding>
+                                        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0"/>
+                                    </padding>
+                                </StackPane>
+                                <VBox alignment="CENTER" prefHeight="306.0" prefWidth="329.0" spacing="10.0"
+                                      style="-fx-border-color: #2196F3; -fx-border-radius: 8;">
+                                    <children>
+                                        <HBox alignment="CENTER_LEFT" spacing="2.0">
+                                            <children>
+                                                <Label styleClass="risk-analysis-subtitle"
+                                                       stylesheets="@../../../styles/diagnostics-style.css"
+                                                       text="Disease Weight"/>
+                                                <TextField fx:id="diagnostics_diseaseWeightField"
+                                                           styleClass="risk-field"
+                                                           stylesheets="@../../../styles/diagnostics-style.css"/>
+                                            </children>
+                                        </HBox>
+                                        <HBox alignment="CENTER_LEFT" spacing="2.0">
+                                            <children>
+                                                <Label styleClass="risk-analysis-subtitle"
+                                                       stylesheets="@../../../styles/diagnostics-style.css"
+                                                       text="Gene Condition"/>
+                                                <TextField fx:id="diagnostics_geneConditionField"
+                                                           styleClass="risk-field"
+                                                           stylesheets="@../../../styles/diagnostics-style.css"/>
+                                            </children>
+                                        </HBox>
+                                        <HBox alignment="CENTER_LEFT" spacing="2.0">
+                                            <children>
+                                                <Label styleClass="risk-analysis-subtitle"
+                                                       stylesheets="@../../../styles/diagnostics-style.css"
+                                                       text="First Relative"/>
+                                                <TextField fx:id="diagnostics_firstRelativeField"
+                                                           styleClass="risk-field"
+                                                           stylesheets="@../../../styles/diagnostics-style.css"/>
+                                            </children>
+                                        </HBox>
+                                        <HBox alignment="CENTER_LEFT" spacing="2.0">
+                                            <children>
+                                                <Label styleClass="risk-analysis-subtitle"
+                                                       stylesheets="@../../../styles/diagnostics-style.css"
+                                                       text="Second Relative"/>
+                                                <TextField fx:id="diagnostics_secondRelativeField"
+                                                           styleClass="risk-field"
+                                                           stylesheets="@../../../styles/diagnostics-style.css"/>
+                                            </children>
+                                        </HBox>
+                                        <HBox alignment="CENTER_LEFT" spacing="2.0">
+                                            <children>
+                                                <Label styleClass="risk-analysis-subtitle"
+                                                       stylesheets="@../../../styles/diagnostics-style.css"
+                                                       text="Total Risk Score"/>
+                                                <TextField fx:id="diagnostics_totalRiskScoreField"
+                                                           styleClass="risk-field"
+                                                           stylesheets="@../../../styles/diagnostics-style.css"/>
+                                            </children>
+                                        </HBox>
+                                        <HBox alignment="CENTER_LEFT" spacing="2.0">
+                                            <children>
+                                                <Label styleClass="risk-analysis-subtitle"
+                                                       stylesheets="@../../../styles/diagnostics-style.css"
+                                                       text="Risk Level"/>
+                                                <TextField fx:id="diagnostics_riskLevelField" styleClass="risk-field"
+                                                           stylesheets="@../../../styles/diagnostics-style.css"/>
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                    <padding>
+                                        <Insets left="5.0" right="5.0" top="20.0"/>
+                                    </padding>
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" right="10.0" top="10.0"/>
+                                    </HBox.margin>
+                                </VBox>
+                            </children>
+                            <HBox.margin>
+                                <Insets/>
+                            </HBox.margin>
+                        </HBox>
                     </children>
                 </HBox>
-                <Button layoutX="408.0" layoutY="176.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0"
-                        styleClass="add-new-patient-button" stylesheets="@../../../styles/diagnostics-style.css"
-                        text="Diagnose"/>
-                <TextArea layoutX="39.0" layoutY="250.0" prefHeight="222.0" prefWidth="956.0"
-                          stylesheets="@../../../styles/diagnostics-style.css"/>
+                <Label layoutX="87.0" layoutY="224.0" style="-fx-text-fill: #2196F3; -fx-background-color: #fff;"
+                       styleClass="subtitle-label" stylesheets="@../../../styles/diagnostics-style.css"
+                       text="Analysis Ops.">
+                    <padding>
+                        <Insets left="10.0" right="10.0"/>
+                    </padding>
+                </Label>
+                <Label layoutX="301.0" layoutY="224.0" style="-fx-text-fill: #2196F3; -fx-background-color: #fff;"
+                       styleClass="subtitle-label" stylesheets="@../../../styles/diagnostics-style.css"
+                       text="Analysis Results">
+                    <padding>
+                        <Insets left="10.0" right="10.0"/>
+                    </padding>
+                </Label>
+                <Label layoutX="419.0" layoutY="255.0" style="-fx-text-fill: #2196F3; -fx-background-color: #fff;"
+                       styleClass="subtitle-label" stylesheets="@../../../styles/diagnostics-style.css"
+                       text="Wikipedia Summary about the Selected Disease">
+                    <padding>
+                        <Insets left="10.0" right="10.0"/>
+                    </padding>
+                </Label>
+                <Label layoutX="998.0" layoutY="234.0" style="-fx-font-weight: bold; -fx-background-color: #fff;"
+                       styleClass="risk-analysis-label" stylesheets="@../../../styles/diagnostics-style.css"
+                       text="Risk Analysis">
+                    <padding>
+                        <Insets left="10.0" right="10.0"/>
+                    </padding>
+                </Label>
             </children>
         </AnchorPane>
     </center>
+    <bottom>
+        <VBox BorderPane.alignment="CENTER"/>
+    </bottom>
 </BorderPane>

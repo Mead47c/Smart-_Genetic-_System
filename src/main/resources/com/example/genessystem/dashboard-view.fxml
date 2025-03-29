@@ -1,90 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.chart.PieChart?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
-
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
 <BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:id="dashboard_root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-            minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0"
+            minWidth="-Infinity" prefHeight="750.0" prefWidth="1400.0"
             styleClass="root-pane" stylesheets="@../../../styles/dashboard-style.css"
             xmlns="http://javafx.com/javafx/23.0.1" fx:controller="com.example.genessystem.DashboardController">
     <top>
-        <HBox alignment="CENTER_LEFT" prefHeight="150.0" prefWidth="1000.0" styleClass="top-pane"
-              stylesheets="@../../../styles/dashboard-style.css" BorderPane.alignment="CENTER">
+        <HBox alignment="CENTER_LEFT" prefHeight="173.0" prefWidth="1505.0" styleClass="top-pane"
+              stylesheets="@../../../styles/reports-style.css" BorderPane.alignment="CENTER">
             <children>
-                <VBox alignment="CENTER" spacing="5.0">
+                <HBox prefHeight="160.0" prefWidth="426.0">
                     <children>
-                        <StackPane>
+                        <Text fx:id="dashboard_mainTitleText" strokeType="OUTSIDE" strokeWidth="0.0"
+                              styleClass="text-title" text="SGS"/>
+                        <VBox alignment="CENTER" prefHeight="160.0" prefWidth="210.0" spacing="5.0">
                             <children>
-                                <Label minWidth="277.0" prefHeight="93.0" prefWidth="318.0" styleClass="title-label"
-                                       stylesheets="@../../../styles/dashboard-style.css" text="Smart Genetic System"
-                                       textAlignment="CENTER" wrapText="true">
-                                </Label>
-                                <Label text="©" textFill="WHITE">
+                                <StackPane prefHeight="46.0" prefWidth="218.0">
+                                    <children>
+                                        <Label minWidth="59.0" prefHeight="46.0" prefWidth="315.0"
+                                               styleClass="title-label" stylesheets="@../../../styles/reports-style.css"
+                                               text="Smart Genetic System" textAlignment="CENTER" wrapText="true"/>
+                                    </children>
+                                </StackPane>
+                                <Label style="-fx-alignment: center;" text="V3.002">
                                     <font>
-                                        <Font name="Consolas" size="25.0"/>
+                                        <Font name="Consolas" size="14.0"/>
                                     </font>
-                                    <StackPane.margin>
-                                        <Insets left="150.0" top="30.0"/>
-                                    </StackPane.margin>
                                 </Label>
                             </children>
-                        </StackPane>
-                        <Label text="V1.001">
-                            <font>
-                                <Font name="Consolas" size="14.0"/>
-                            </font>
-                        </Label>
+                        </VBox>
                     </children>
-                </VBox>
+                </HBox>
                 <StackPane minWidth="250.0">
                     <children>
                         <VBox alignment="CENTER_LEFT" prefWidth="100.0" spacing="5.0">
                             <children>
-                                <Label styleClass="user-data-labels" stylesheets="@../../../styles/dashboard-style.css"
-                                       text="Username:">
-                                    <font>
-                                        <Font name="Roboto" size="16.0"/>
-                                    </font>
-                                </Label>
+                                <Label styleClass="user-data-labels" stylesheets="@../../../styles/reports-style.css"
+                                       text="Username:"/>
                                 <Label fx:id="dashboard_usernameLabel" style="-fx-font-weight: bold;"
-                                       styleClass="user-data-labels" stylesheets="@../../../styles/dashboard-style.css"
-                                       text="Label" textFill="WHITE" wrapText="true">
-                                    <font>
-                                        <Font name="Roboto" size="16.0"/>
-                                    </font>
-                                </Label>
+                                       styleClass="user-data-labels" stylesheets="@../../../styles/reports-style.css"
+                                       text="Label" textFill="WHITE" wrapText="true"/>
                                 <Label layoutX="60.0" layoutY="64.0" styleClass="user-data-labels"
-                                       stylesheets="@../../../styles/dashboard-style.css" text="Login Time:">
-                                    <font>
-                                        <Font name="Roboto" size="16.0"/>
-                                    </font>
-                                </Label>
+                                       stylesheets="@../../../styles/reports-style.css" text="Login Time:"/>
                                 <Label fx:id="dashboard_loginDateLabel" layoutX="79.0" layoutY="76.0"
                                        nodeOrientation="RIGHT_TO_LEFT" style="-fx-font-weight: bold;"
-                                       styleClass="user-data-labels" stylesheets="@../../../styles/dashboard-style.css"
-                                       text="Label" textFill="WHITE" wrapText="true">
-                                    <font>
-                                        <Font name="Roboto" size="16.0"/>
-                                    </font>
-                                </Label>
+                                       styleClass="user-data-labels" stylesheets="@../../../styles/reports-style.css"
+                                       text="Label" textFill="WHITE" wrapText="true"/>
                                 <Label fx:id="dashboard_loginTimeLabel" layoutX="10.0" layoutY="112.0"
                                        nodeOrientation="RIGHT_TO_LEFT" style="-fx-font-weight: bold;"
-                                       styleClass="user-data-labels" stylesheets="@../../../styles/dashboard-style.css"
-                                       text="Label" textFill="WHITE" wrapText="true">
-                                    <font>
-                                        <Font name="Roboto" size="16.0"/>
-                                    </font>
-                                </Label>
+                                       styleClass="user-data-labels" stylesheets="@../../../styles/reports-style.css"
+                                       text="Label" textFill="WHITE" wrapText="true"/>
                             </children>
                         </VBox>
                         <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
@@ -97,7 +68,7 @@
                         </ImageView>
                     </children>
                     <HBox.margin>
-                        <Insets left="630.0"/>
+                        <Insets left="700.0"/>
                     </HBox.margin>
                 </StackPane>
             </children>
@@ -137,209 +108,210 @@
                 <Insets bottom="10.0" right="10.0" top="10.0"/>
             </BorderPane.margin>
             <children>
-                <VBox alignment="CENTER_LEFT" layoutX="23.0" layoutY="24.0" prefHeight="114.0" prefWidth="258.0"
-                      spacing="10.0" styleClass="stats-pane" stylesheets="@../../../styles/dashboard-style.css">
+                <HBox layoutX="42.0" layoutY="14.0" spacing="30.0">
                     <children>
-                        <Label style="-fx-underline: true;" text="Init. Stats:" textFill="#2196f3">
-                            <VBox.margin>
-                                <Insets/>
-                            </VBox.margin>
-                            <font>
-                                <Font name="Roboto Bold" size="20.0"/>
-                            </font>
-                            <padding>
-                                <Insets bottom="10.0"/>
-                            </padding>
-                        </Label>
-                        <HBox>
+                        <VBox alignment="CENTER" prefHeight="150.0" prefWidth="200.0" spacing="10.0">
                             <children>
-                                <VBox maxWidth="120.0" prefHeight="66.0" prefWidth="120.0" spacing="5.0">
-                                    <children>
-                                        <Label styleClass="subtitle-label"
-                                               stylesheets="@../../../styles/dashboard-style.css"
-                                               text="Num of Patients:">
-                                            <font>
-                                                <Font name="Roboto" size="14.0"/>
-                                            </font>
-                                        </Label>
-                                        <Label styleClass="subtitle-label"
-                                               stylesheets="@../../../styles/dashboard-style.css" text="Cured:">
-                                            <font>
-                                                <Font name="Roboto" size="14.0"/>
-                                            </font>
-                                        </Label>
-                                        <Label styleClass="subtitle-label"
-                                               stylesheets="@../../../styles/dashboard-style.css"
-                                               text="Under Treatment:">
-                                            <font>
-                                                <Font name="Roboto" size="14.0"/>
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </VBox>
-                                <VBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" maxWidth="116.0"
-                                      prefHeight="66.0" prefWidth="116.0" spacing="5.0">
-                                    <children>
-                                        <Label text="100">
-                                            <font>
-                                                <Font name="Consolas" size="14.0"/>
-                                            </font>
-                                        </Label>
-                                        <Label text="20">
-                                            <font>
-                                                <Font name="Consolas" size="14.0"/>
-                                            </font>
-                                        </Label>
-                                        <Label text="80">
-                                            <font>
-                                                <Font name="Consolas" size="14.0"/>
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </VBox>
+                                <Label fx:id="dashboard_totalPatientsLabel" style="-fx-text-fill: #993f6c;"
+                                       styleClass="stats-numbers-label"
+                                       stylesheets="@../../../styles/dashboard-style.css" text="XX">
+                                    <font>
+                                        <Font name="Consolas" size="12.0"/>
+                                    </font>
+                                </Label>
+                                <Label maxHeight="60.0" minHeight="60.0"
+                                       stylesheets="@../../../styles/dashboard-style.css" text="Total Patients"
+                                       textAlignment="CENTER" wrapText="true">
+                                    <font>
+                                        <Font size="14.0"/>
+                                    </font>
+                                    <styleClass>
+                                        <String fx:value="stats-pane"/>
+                                        <String fx:value="Label"/>
+                                    </styleClass>
+                                </Label>
+                                <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../images/patient.png"/>
+                                    </image>
+                                    <VBox.margin>
+                                        <Insets left="130.0"/>
+                                    </VBox.margin>
+                                </ImageView>
                             </children>
-                        </HBox>
-                    </children>
-                    <padding>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
-                    </padding>
-                </VBox>
-                <VBox alignment="CENTER_LEFT" layoutX="379.0" layoutY="24.0" prefHeight="119.0" prefWidth="258.0"
-                      spacing="10.0" styleClass="stats-pane" stylesheets="@../../../styles/dashboard-style.css">
-                    <children>
-                        <Label style="-fx-underline: true;" text="Init. Stats:" textFill="#2196f3">
-                            <VBox.margin>
-                                <Insets/>
-                            </VBox.margin>
-                            <font>
-                                <Font name="Roboto Bold" size="20.0"/>
-                            </font>
-                            <padding>
-                                <Insets bottom="10.0"/>
-                            </padding>
-                        </Label>
-                        <HBox>
+                            <styleClass>
+                                <String fx:value="stats-pane"/>
+                                <String fx:value="pink"/>
+                            </styleClass>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="150.0" prefWidth="200.0" spacing="10.0">
                             <children>
-                                <VBox maxWidth="120.0" prefHeight="66.0" prefWidth="120.0" spacing="5.0">
-                                    <children>
-                                        <Label styleClass="subtitle-label"
-                                               stylesheets="@../../../styles/dashboard-style.css"
-                                               text="Num of Patients:">
-                                            <font>
-                                                <Font name="Roboto" size="14.0"/>
-                                            </font>
-                                        </Label>
-                                        <Label styleClass="subtitle-label"
-                                               stylesheets="@../../../styles/dashboard-style.css" text="Cured:">
-                                            <font>
-                                                <Font name="Roboto" size="14.0"/>
-                                            </font>
-                                        </Label>
-                                        <Label styleClass="subtitle-label"
-                                               stylesheets="@../../../styles/dashboard-style.css"
-                                               text="Under Treatment:">
-                                            <font>
-                                                <Font name="Roboto" size="14.0"/>
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </VBox>
-                                <VBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" maxWidth="116.0"
-                                      prefHeight="66.0" prefWidth="116.0" spacing="5.0">
-                                    <children>
-                                        <Label text="100">
-                                            <font>
-                                                <Font name="Consolas" size="14.0"/>
-                                            </font>
-                                        </Label>
-                                        <Label text="20">
-                                            <font>
-                                                <Font name="Consolas" size="14.0"/>
-                                            </font>
-                                        </Label>
-                                        <Label text="80">
-                                            <font>
-                                                <Font name="Consolas" size="14.0"/>
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </VBox>
+                                <Label fx:id="dashboard_commonGeneticDiseaseLabel" maxHeight="51.2" minHeight="51.2"
+                                       style="-fx-font-size: 20; -fx-font-family: Calibri; -fx-text-fill: #996b2a;"
+                                       styleClass="stats-numbers-label"
+                                       stylesheets="@../../../styles/dashboard-style.css" text="xxx xxx xxx xxx"
+                                       textAlignment="CENTER" textFill="#b6e179" wrapText="true"/>
+                                <Label maxHeight="60.0" minHeight="60.0" styleClass="stats-pane"
+                                       stylesheets="@../../../styles/dashboard-style.css" text="Common Genetic Disease"
+                                       textAlignment="CENTER" wrapText="true">
+                                    <font>
+                                        <Font size="14.0"/>
+                                    </font>
+                                </Label>
+                                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../images/genetic-cases.png"/>
+                                    </image>
+                                    <VBox.margin>
+                                        <Insets left="140.0"/>
+                                    </VBox.margin>
+                                </ImageView>
                             </children>
-                        </HBox>
-                    </children>
-                    <padding>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
-                    </padding>
-                </VBox>
-                <VBox alignment="CENTER_LEFT" layoutX="736.0" layoutY="24.0" prefHeight="108.0" prefWidth="258.0"
-                      spacing="10.0" styleClass="stats-pane" stylesheets="@../../../styles/dashboard-style.css">
-                    <children>
-                        <Label style="-fx-underline: true;" text="Init. Stats:" textFill="#2196f3">
-                            <VBox.margin>
-                                <Insets/>
-                            </VBox.margin>
-                            <font>
-                                <Font name="Roboto Bold" size="20.0"/>
-                            </font>
-                            <padding>
-                                <Insets bottom="10.0"/>
-                            </padding>
-                        </Label>
-                        <HBox>
+                            <styleClass>
+                                <String fx:value="stats-pane"/>
+                                <String fx:value="yellow"/>
+                            </styleClass>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="150.0" prefWidth="200.0" spacing="10.0">
                             <children>
-                                <VBox maxWidth="120.0" prefHeight="66.0" prefWidth="120.0" spacing="5.0">
+                                <HBox alignment="CENTER" spacing="10.0">
                                     <children>
-                                        <Label styleClass="subtitle-label"
-                                               stylesheets="@../../../styles/dashboard-style.css"
-                                               text="Num of Patients:">
-                                            <font>
-                                                <Font name="Roboto" size="14.0"/>
-                                            </font>
-                                        </Label>
-                                        <Label styleClass="subtitle-label"
-                                               stylesheets="@../../../styles/dashboard-style.css" text="Cured:">
-                                            <font>
-                                                <Font name="Roboto" size="14.0"/>
-                                            </font>
-                                        </Label>
-                                        <Label styleClass="subtitle-label"
-                                               stylesheets="@../../../styles/dashboard-style.css"
-                                               text="Under Treatment:">
-                                            <font>
-                                                <Font name="Roboto" size="14.0"/>
-                                            </font>
-                                        </Label>
+                                        <Label maxWidth="70.0" minWidth="70.0" prefWidth="45.0"
+                                               styleClass="stats-subtitle-label"
+                                               stylesheets="@../../../styles/dashboard-style.css" text="Male:"/>
+                                        <Label fx:id="dashboard_maleLabel"
+                                               style="-fx-font-size: 20; -fx-text-fill: #316a38;"
+                                               styleClass="stats-numbers-label"
+                                               stylesheets="@../../../styles/dashboard-style.css" text="xx"/>
                                     </children>
-                                </VBox>
-                                <VBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" maxWidth="116.0"
-                                      prefHeight="66.0" prefWidth="116.0" spacing="5.0">
-                                    <children>
-                                        <Label text="100">
-                                            <font>
-                                                <Font name="Consolas" size="14.0"/>
-                                            </font>
-                                        </Label>
-                                        <Label text="20">
-                                            <font>
-                                                <Font name="Consolas" size="14.0"/>
-                                            </font>
-                                        </Label>
-                                        <Label text="80">
-                                            <font>
-                                                <Font name="Consolas" size="14.0"/>
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </VBox>
-                            </children>
                         </HBox>
+                                <HBox alignment="CENTER" layoutX="11.0" layoutY="28.0" spacing="10.0">
+                                    <children>
+                                        <Label maxWidth="70.0" minWidth="70.0" prefHeight="20.0" prefWidth="70.0"
+                                               styleClass="stats-subtitle-label"
+                                               stylesheets="@../../../styles/dashboard-style.css" text="Female"/>
+                                        <Label fx:id="dashboard_femaleLabel"
+                                               style="-fx-font-size: 20; -fx-text-fill: #316a38;"
+                                               styleClass="stats-numbers-label"
+                                               stylesheets="@../../../styles/dashboard-style.css" text="xx"/>
+                                    </children>
+                                    <VBox.margin>
+                                        <Insets top="-10.0"/>
+                                    </VBox.margin>
+                                </HBox>
+                                <Label maxHeight="60.0" minHeight="60.0" styleClass="stats-pane"
+                                       stylesheets="@../../../styles/dashboard-style.css" text="Gender Distribution"
+                                       textAlignment="CENTER" wrapText="true">
+                                    <font>
+                                        <Font size="14.0"/>
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets top="2.0"/>
+                                    </VBox.margin>
+                        </Label>
+                                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../images/gender.png"/>
+                                    </image>
+                                    <VBox.margin>
+                                        <Insets left="145.0"/>
+                                    </VBox.margin>
+                                </ImageView>
+                            </children>
+                            <styleClass>
+                                <String fx:value="stats-pane"/>
+                                <String fx:value="green"/>
+                            </styleClass>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="150.0" prefWidth="200.0" spacing="10.0">
+                            <children>
+                                <Label fx:id="dashboard_geneticDiagnosesCoverageLabel" style="-fx-text-fill: #006c81;"
+                                       styleClass="stats-numbers-label"
+                                       stylesheets="@../../../styles/dashboard-style.css" text="xx%"
+                                       textFill="#79cbe7"/>
+                                <Label maxHeight="60.0" minHeight="60.0" styleClass="stats-pane"
+                                       stylesheets="@../../../styles/dashboard-style.css"
+                                       text="Genetic Diagnoses Coverage" textAlignment="CENTER" wrapText="true">
+                                    <font>
+                                        <Font size="14.0"/>
+                                    </font>
+                                </Label>
+                                <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../images/increases.png"/>
+                                    </image>
+                                    <VBox.margin>
+                                        <Insets left="130.0"/>
+                                    </VBox.margin>
+                                </ImageView>
+                            </children>
+                            <styleClass>
+                                <String fx:value="stats-pane"/>
+                                <String fx:value="blue"/>
+                            </styleClass>
+                        </VBox>
+                        <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="150.0" prefWidth="200.0"
+                              spacing="10.0">
+                            <children>
+                                <Label fx:id="dashboard_averageAgeDiagnosedLabel" style="-fx-text-fill: #6d369a;"
+                                       styleClass="stats-numbers-label"
+                                       stylesheets="@../../../styles/dashboard-style.css" text="xx" textFill="#f2abd2">
+                                    <font>
+                                        <Font name="Consolas" size="12.0"/>
+                                    </font>
+                                </Label>
+                                <Label maxHeight="60.0" minHeight="60.0" styleClass="stats-pane"
+                                       stylesheets="@../../../styles/dashboard-style.css" text="Average Age (Diagnosed)"
+                                       textAlignment="CENTER" wrapText="true">
+                                    <font>
+                                        <Font size="14.0"/>
+                                    </font>
+                                </Label>
+                                <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../images/averageAge.png"/>
+                                    </image>
+                                    <VBox.margin>
+                                        <Insets left="130.0"/>
+                                    </VBox.margin>
+                                </ImageView>
+                            </children>
+                            <styleClass>
+                                <String fx:value="stats-pane"/>
+                                <String fx:value="purple"/>
+                            </styleClass>
+                        </VBox>
                     </children>
-                    <padding>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
-                    </padding>
-                </VBox>
-                <PieChart fx:id="dashboard_pieChart" layoutX="23.0" layoutY="180.0" prefHeight="302.0" prefWidth="261.0"
-                          styleClass="pie-chart" stylesheets="@../../../styles/dashboard-style.css"/>
+                </HBox>
+                <BarChart fx:id="dashboard_barChart" layoutX="14.0" layoutY="249.0" prefHeight="282.0" prefWidth="500.0"
+                          styleClass="bar-chart">
+                    <xAxis>
+                        <CategoryAxis side="BOTTOM" stylesheets="@../../../styles/dashboard-style.css"/>
+                    </xAxis>
+                    <yAxis>
+                        <NumberAxis side="LEFT" stylesheets="@../../../styles/dashboard-style.css"/>
+                    </yAxis>
+                </BarChart>
+                <PieChart fx:id="dashboard_pieChart" layoutX="752.0" layoutY="249.0" prefHeight="282.0"
+                          prefWidth="450.0"/>
+                <LineChart fx:id="dashboard_LineChart" layoutX="521.0" layoutY="390.0" prefHeight="150.0"
+                           prefWidth="190.0">
+                    <xAxis>
+                        <CategoryAxis side="BOTTOM"/>
+                    </xAxis>
+                    <yAxis>
+                        <NumberAxis side="LEFT"/>
+                    </yAxis>
+                </LineChart>
+                <ScatterChart fx:id="dashboard_scatterChart" layoutX="521.0" layoutY="239.0" prefHeight="150.0"
+                              prefWidth="190.0">
+                    <xAxis>
+                        <NumberAxis fx:id="scatterXAxis"/>
+                    </xAxis>
+                    <yAxis>
+                        <NumberAxis fx:id="scatterYAxis"/>
+                    </yAxis>
+                </ScatterChart>
             </children>
         </AnchorPane>
     </center>

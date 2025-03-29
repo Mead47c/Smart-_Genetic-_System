@@ -172,16 +172,6 @@
     -fx-background-size: 80%;
 }
 
-.disease-button {
-    -fx-background-image: url("../images/disease.png");
-    -fx-background-size: 80%;
-}
-
-.kinship-button {
-    -fx-background-image: url("../images/kinship.png");
-    -fx-background-size: 80%;
-}
-
 .phone-prefix-text-field {
     -fx-font-family: Consolas;
     -fx-min-width: 50;

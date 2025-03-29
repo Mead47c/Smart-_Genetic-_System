@@ -444,6 +444,7 @@ public class LoginController implements Initializable {
         ProgressIndicator indicator = new ProgressIndicator();
         root.getChildren().addAll(indicator, statusLabel);
 
+
         TextField[] otpFields = new TextField[6];
         HBox fieldsBox = new HBox(5);
         fieldsBox.setAlignment(Pos.CENTER);

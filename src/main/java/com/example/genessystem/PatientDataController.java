@@ -5,7 +5,6 @@ import com.example.genessystem.effects.Effects;
 import com.example.genessystem.objects.Patient;
 import com.example.genessystem.utils.UsernameReceiver;
 import com.example.genessystem.utils.database.DatabaseConnection;
-import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -18,17 +17,23 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.scene.image.Image;
+import javafx.scene.input.Clipboard;
+import javafx.scene.input.ClipboardContent;
+import javafx.scene.input.MouseButton;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import javafx.util.Pair;
 
-import java.awt.Toolkit;
-import java.io.FileNotFoundException;
+import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -38,6 +43,9 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class PatientDataController implements Initializable, UsernameReceiver {
@@ -106,6 +114,11 @@ public class PatientDataController implements Initializable, UsernameReceiver {
     @FXML
     public Button patientData_reportsButton;
 
+    @FXML
+    public Text patientData_mainTitleText;
+
+    private ContextMenu contextMenu;
+
 // ****************************** END OF Declaration Area ********************************
 
 
@@ -150,6 +163,7 @@ public class PatientDataController implements Initializable, UsernameReceiver {
         Effects.buttonEffect(patientData_dashboardButton);
         Effects.buttonEffect(patientData_diagnosticsButton);
         Effects.buttonEffect(patientData_logoutButton);
+        Effects.buttonEffect(patientData_reportsButton);
         Effects.buttonEffect(patientData_exit);
     }
 
@@ -205,6 +219,7 @@ public class PatientDataController implements Initializable, UsernameReceiver {
     // Test Data for Table View
     public void tableViewRecords() {
         ObservableList<Patient> patientData = FXCollections.observableArrayList();
+        List<Pair<Long, String>> patientsToUpdate = new ArrayList<>();
         String query = "SELECT * FROM patient";
 
         try (Connection conn = DatabaseConnection.connect();
@@ -212,13 +227,30 @@ public class PatientDataController implements Initializable, UsernameReceiver {
              ResultSet resultSet = preparedStatement.executeQuery()) {
 
             while (resultSet.next()) {
+                String dobString = resultSet.getString("dob");
+                LocalDate dob = LocalDate.parse(dobString);
+                String calculatedAge = calculateAge(dob);
+                String dbAge = resultSet.getString("age");
+                long nationalId = resultSet.getLong("nationalid");
+
+                 /* Check if the age needs to be updated
+                 because age is saved once the patient record created
+                 so we need to check age over time
+                 this solution is ineffective because it consumes memory
+                 the best approach is to calculate the age everytime without the need to save it in the db
+                 but since we have already created a patient table with age field
+                 this will be out temp solution for now  */
+                if (!calculatedAge.equals(dbAge)) {
+                    patientsToUpdate.add(new Pair<>(nationalId, calculatedAge));
+                }
+
                 Patient patient = new Patient(
-                        resultSet.getLong("nationalid"),
+                        nationalId,
                         resultSet.getString("medicalrecord"),
                         resultSet.getString("firstname"),
                         resultSet.getString("lastname"),
-                        resultSet.getString("dob"),
-                        resultSet.getString("age"),
+                        dobString,
+                        calculatedAge,
                         resultSet.getString("email"),
                         resultSet.getString("phone"),
                         resultSet.getString("gender")
@@ -237,8 +269,43 @@ public class PatientDataController implements Initializable, UsernameReceiver {
 
         } catch (SQLException e) {
             Dialogs.showAlertMessage("Database Error", "Failed to load patient data. Please check your connection.", Dialogs.MessageType.ERROR_MESSAGE);
+            return;
+        }
+
+        for (Pair<Long, String> entry : patientsToUpdate) {
+            updatePatientAgeInDatabase(entry.getKey(), entry.getValue());
         }
     }
+
+
+    public String calculateAge(LocalDate dateOfBirth) {
+        LocalDate today = LocalDate.now();
+        long years = ChronoUnit.YEARS.between(dateOfBirth, today);
+
+        if (years < 1) {
+            long weeks = ChronoUnit.WEEKS.between(dateOfBirth, today);
+            return weeks + " wks";
+        } else {
+            return years + " yrs";
+        }
+    }
+
+
+    private void updatePatientAgeInDatabase(long nationalId, String newAge) {
+        String updateQuery = "UPDATE patient SET age = ? WHERE nationalid = ?";
+        try (Connection conn = DatabaseConnection.connect();
+             PreparedStatement stmt = conn.prepareStatement(updateQuery)) {
+            stmt.setString(1, newAge);
+            stmt.setLong(2, nationalId);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println("Failed to update age: " + e.getMessage());
+        }
+    }
+
+
+
+
 
 
     public void searchPatientData() {
@@ -266,6 +333,7 @@ public class PatientDataController implements Initializable, UsernameReceiver {
         patientData_tableView.setItems(sortedData);
     }
 
+
     @FXML
     public void addNewPatient(ActionEvent event) throws IOException {
 
@@ -289,6 +357,49 @@ public class PatientDataController implements Initializable, UsernameReceiver {
     }
 
 
+    //Copy data from the table view
+    public void initializeContextMenu() {
+        contextMenu = new ContextMenu();
+        MenuItem copyNationalID = new MenuItem("Copy National ID");
+        MenuItem copyMedicalRecord = new MenuItem("Copy Medical Record");
+
+        copyNationalID.setOnAction(event -> copyToClipboard("nationalId"));
+        copyMedicalRecord.setOnAction(event -> copyToClipboard("medicalRecord"));
+
+        contextMenu.getItems().addAll(copyNationalID, copyMedicalRecord);
+        contextMenu.getScene().getStylesheets().add(getClass().getResource("/styles/patient-data-style.css").toExternalForm());
+
+        patientData_tableView.setOnMouseClicked(event -> {
+            if (event.getButton() == MouseButton.SECONDARY) {
+                if (patientData_tableView.getSelectionModel().getSelectedItem() != null) {
+                    contextMenu.show(patientData_tableView, event.getScreenX(), event.getScreenY());
+                }
+            }
+        });
+    }
+
+    private void copyToClipboard(String field) {
+        Patient selectedPatient = patientData_tableView.getSelectionModel().getSelectedItem();
+        if (selectedPatient != null) {
+            String dataToCopy = "";
+            switch (field) {
+                case "nationalId":
+                    dataToCopy = String.valueOf(selectedPatient.getNationalId());
+                    break;
+                case "medicalRecord":
+                    dataToCopy = selectedPatient.getMedicalRecord();
+                    break;
+            }
+
+            Clipboard clipboard = Clipboard.getSystemClipboard();
+            ClipboardContent content = new ClipboardContent();
+            content.putString(dataToCopy);
+            clipboard.setContent(content);
+        }
+    }
+
+
+
     // *********************************************************************************************
     // **************************************  Initialize ******************************************
     // *********************************************************************************************
@@ -308,6 +419,14 @@ public class PatientDataController implements Initializable, UsernameReceiver {
         patientData_genderCol.setCellValueFactory(new PropertyValueFactory<>("gender"));
 
         tableViewRecords();
-    }
+        initializeContextMenu();
 
+        patientData_tableView.focusedProperty().addListener((observable, oldValue, newValue) -> {
+            if (!newValue) {
+                patientData_tableView.getSelectionModel().clearSelection();
+            }
+        });
+
+        patientData_mainTitleText.setFill(new ImagePattern(new Image(getClass().getResourceAsStream("/images/black-wallpaper.jpg"))));
+    }
 }

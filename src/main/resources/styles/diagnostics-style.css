@@ -52,6 +52,21 @@
     -fx-text-fill: #000;
 }
 
+.risk-analysis-label {
+    -fx-font-family: "Roboto-Black";
+    -fx-font-weight: bold;
+    -fx-font-size: 14;
+    -fx-text-fill: #2196F3;
+}
+
+.risk-analysis-subtitle {
+    -fx-font-family: "Roboto";
+    -fx-font-size: 12;
+    -fx-text-fill: #2196F3;
+    -fx-min-width: 88;
+    -fx-max-width: 88;
+}
+
 .left-pane {
     -fx-background-color: #2196F3;
     -fx-background-radius: 20;
@@ -63,16 +78,6 @@
 .center-pane {
     /* -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #e8f4fd, #ffffff); */
     -fx-background-color: #fff;
-    -fx-background-radius: 20;
-    -fx-border-radius: 20;
-    -fx-border-color: transparent;
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.2, 0, 4);
-}
-
-
-.stats-pane {
-    /* -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #79c0f7, #ffffff); */
-    -fx-background-color: #DCEDF8;
     -fx-background-radius: 20;
     -fx-border-radius: 20;
     -fx-border-color: transparent;
@@ -116,12 +121,150 @@
     -fx-background-image: url("../images/exit-red.png");
 }
 
+.diagnose-button {
+    -fx-background-color: #2196F3;
+    -fx-background-radius: 50;
+    -fx-min-width: 50;
+    -fx-max-width: 50;
+    -fx-min-height: 50;
+    -fx-max-height: 50;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.2, 0, 4);
+    -fx-cursor: hand;
+    /*-fx-background-color: #2196F3;*/
+    /*-fx-border-radius: 20 20 0 0 ;*/
+    /*-fx-background-radius: 8 ;*/
+    /*-fx-min-width: 200;*/
+    /*-fx-max-width: 200;*/
+    /*-fx-min-height: 40;*/
+    /*-fx-max-height: 40;*/
+    /*-fx-text-fill: #fff;*/
+    /*-fx-font-family: Roboto;*/
+    /*-fx-font-weight: bold;*/
+    /*-fx-font-size: 18;*/
+    /*-fx-cursor: hand;*/
+    /*-fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.6), 10, 0.2, 0, 4);*/
+}
+
+.diagnose-button:hover {
+    -fx-background-color: #fff;
+    -fx-text-fill: #2196f3;
+}
+
+.diagnose-button:pressed {
+    -fx-background-color: #2196f3;
+    -fx-text-fill: #fff;
+}
+
+
+.wikipedia {
+    -fx-background-image: url("../images/wikipedia-white.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 40 40;
+    -fx-background-position: center;
+}
+
+.wikipedia:hover {
+    -fx-background-image: url("../images/wikipedia.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 40 40;
+    -fx-background-position: center;
+}
+
+.wikipedia:pressed {
+    -fx-background-image: url("../images/wikipedia-white.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 40 40;
+    -fx-background-position: center;
+}
+
+.sgs {
+    -fx-background-image: url("../images/mainLogo-white.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 40 40;
+    -fx-background-position: center;
+}
+
+.sgs:hover {
+    -fx-background-image: url("../images/mainLogo.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 40 40;
+    -fx-background-position: center;
+}
+
+.sgs:pressed {
+    -fx-background-image: url("../images/mainLogo-white.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 40 40;
+    -fx-background-position: center;
+}
+
+.save-button {
+    -fx-background-image: url("../images/save-white.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 30 30;
+    -fx-background-position: center;
+    -fx-background-color: #64ad64;
+}
+
+.save-button:hover {
+    -fx-background-image: url("../images/save.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 30 30;
+    -fx-background-position: center;
+    -fx-background-color: #fff;
+}
+
+.save-button:pressed {
+    -fx-background-image: url("../images/save-white.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 30 30;
+    -fx-background-position: center;
+    -fx-background-color: #64ad64;
+}
+
+.clear-button {
+    -fx-background-image: url("../images/clear-white.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 40 40;
+    -fx-background-position: center;
+    -fx-background-color: #ff6666;
+}
+
+.clear-button:hover {
+    -fx-background-image: url("../images/clear.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 40 40;
+    -fx-background-position: center;
+    -fx-background-color: #fff;
+}
+
+.clear-button:pressed {
+    -fx-background-image: url("../images/clear-white.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 40 40;
+    -fx-background-position: center;
+    -fx-background-color: #ff6666;
+}
+
+.buttons-text-flow {
+    -fx-background-color: transparent;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-border-color: #2196F3;
+    -fx-border-width: 2 2 2 0;
+    -fx-padding: 10;
+    -fx-font-family: Roboto;
+    -fx-font-size: 14;
+    -fx-font-weight: bold;
+    -fx-opacity: 1.0;
+}
+
 .text-field {
     -fx-background-color: transparent;
     -fx-border-width: 0 0 1 0;
     -fx-border-color: #2196F3;
-    -fx-min-width: 200;
-    -fx-max-width: 200;
+    -fx-min-width: 150;
+    -fx-max-width: 150;
     -fx-font-family: "Roboto";
     -fx-font-size: 15;
     -fx-text-fill: #2196f3;
@@ -134,20 +277,249 @@
     -fx-border-color: #2196f3;
 }
 
+.risk-field {
+    -fx-border-width: 1;
+    -fx-border-radius: 8;
+    -fx-opacity: 1;
+}
+
+.risk-field:disabled {
+    -fx-opacity: 0.3;
+}
+
 .text-area {
     -fx-background-color: transparent;
     -fx-border-width: 1;
     -fx-border-color: #2196F3;
+    -fx-border-radius: 8;
+    -fx-padding: 10 5 5 5;
+    -fx-background-radius: 8;
     -fx-font-family: "Roboto";
     -fx-font-weight: bold;
-    -fx-font-size: 15;
-    -fx-text-fill: #2196f3;
-    -fx-prompt-text-fill: #90caf9;
+    -fx-font-size: 14;
+    -fx-text-fill: #000;
+    -fx-opacity: 1;
     -fx-cursor: text;
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.2, 0, 4);
 }
 
 .text-area:focused {
-    -fx-border-width: 2;
+    -fx-border-width: 2.5;
     -fx-border-color: #2196f3;
+}
+
+.text-area:disabled {
+    -fx-opacity: 0.3;
+}
+
+.text-area .content {
+    -fx-background-color: transparent;
+}
+
+.text-area .scroll-pane {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+    -fx-border-color: transparent;
+}
+
+.text-area .scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+.icon-button {
+    -fx-background-color: transparent;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-border-width: 2px;
+    -fx-border-color: #2196F3;
+    -fx-border-radius: 2;
+    -fx-min-width: 30;
+    -fx-max-width: 30;
+    -fx-min-height: 30;
+    -fx-max-height: 30;
+    -fx-opacity: 1.0;
+    -fx-smooth: true;
+    -fx-alignment: center;
+}
+
+.disease-name-button {
+    -fx-background-image: url("../images/genedisease.png");
+    -fx-background-size: 90%;
+}
+
+.gene-condition-button {
+    -fx-background-image: url("../images/gene-condition.png");
+    -fx-background-size: 80%;
+}
+
+.first-relative-button {
+    -fx-background-image: url("../images/first-relative.png");
+    -fx-background-size: 80%;
+}
+
+.second-relative-button {
+    -fx-background-image: url("../images/second-relative.png");
+    -fx-background-size: 80%;
+}
+
+
+.combo-box {
+    -fx-font-family: "Roboto";
+    -fx-font-size: 15;
+    -fx-background-color: transparent;
+    -fx-border-color: #2196F3;
+    -fx-border-width: 0 0 1 0;
+    -fx-text-fill: #2196F3;
+    -fx-prompt-text-fill: #90caf9;
+    -fx-cursor: hand;
+    -fx-min-width: 200;
+    -fx-max-width: 200;
+}
+
+.combo-box:hover {
+    -fx-border-color: #2196F3;
+    -fx-text-fill: #fff;
+}
+
+.combo-box:focused {
+    -fx-border-width: 0 0 2 0;
+    -fx-border-color: #2196F3;
+}
+
+.combo-box .arrow-button {
+    -fx-background-color: transparent;
+}
+
+.combo-box .arrow {
+    -fx-background-color: #2196F3;
+}
+
+.combo-box .list-cell {
+    -fx-font-family: "Roboto";
+    -fx-text-fill: #2196F3;
+    -fx-font-size: 14;
+    -fx-padding: 5 10 5 10;
+}
+
+.combo-box-popup .list-view {
+    -fx-background-color: #fff;
+    -fx-border-color: #2196F3;
+    -fx-border-width: 1;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 8, 0.2, 0, 4);
+}
+
+.combo-box-popup .list-cell:hover {
+    -fx-background-color: #2196F3;
+    -fx-text-fill: #fff;
+    -fx-padding: 5 10 5 10;
+}
+
+.combo-box-popup .list-cell:focused {
+    -fx-background-color: #2196F3;
+    -fx-text-fill: #fff;
+}
+
+.radio-button {
+    -fx-font-family: "Roboto";
+    -fx-font-size: 14;
+    -fx-text-fill: #2196F3;
+    -fx-cursor: hand;
+}
+
+.radio-button:hover {
+    -fx-text-fill: #1976D2;
+}
+
+.radio-button:pressed {
+    -fx-text-fill: #0D47A1;
+}
+
+.radio-button .radio {
+    -fx-background-color: white;
+    -fx-border-color: #2196F3;
+    -fx-border-width: 2;
+    -fx-border-radius: 50%;
+    -fx-background-radius: 50%;
+    -fx-padding: 3;
+}
+
+.radio-button:selected .radio {
+    -fx-background-color: #2196F3;
+    -fx-border-color: #2196F3;
+}
+
+.radio-button .dot {
+    -fx-background-color: transparent;
+    -fx-padding: 4;
+}
+
+.radio-button:selected .dot {
+    -fx-background-color: #2196F3;
+    -fx-background-radius: 50%;
+    -fx-padding: 4;
+}
+
+
+.spinner {
+    -fx-text-fill: #2196F3;
+    -fx-background-color: white;
+    -fx-border-color: #2196F3;
+    -fx-border-width: 1;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 2 6;
+    -fx-min-width: 80;
+    -fx-max-width: 80;
+    -fx-cursor: hand;
+}
+
+/* Arrows container */
+.spinner .arrow-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-cursor: hand;
+}
+
+.spinner .text-field {
+    -fx-font-size: 14;
+    -fx-font-family: Consolas;
+    -fx-border-color: transparent;
+    -fx-min-width: 60;
+    -fx-max-width: 60;
+}
+
+.spinner .increment-arrow {
+    -fx-background-color: #2196F3;
+    -fx-shape: "M 0 4 L 4 0 L 8 4 Z";
+    -fx-padding: 3;
+}
+
+.spinner .decrement-arrow {
+    -fx-background-color: #2196F3;
+    -fx-shape: "M 0 0 L 4 4 L 8 0 Z";
+    -fx-padding: 3;
+}
+
+.spinner .arrow-button:hover .increment-arrow,
+.spinner .arrow-button:hover .decrement-arrow {
+    -fx-background-color: #1976D2;
+}
+
+.spinner:focused {
+    -fx-border-color: #1976D2;
+    -fx-effect: dropshadow(gaussian, rgba(33, 150, 243, 0.3), 6, 0.2, 0, 1);
+}
+
+
+.progress-indicator {
+    -fx-progress-color: #2196F3;
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-padding: 0;
+    -fx-max-width: 100;
+    -fx-max-height: 100;
+    -fx-min-width: 100;
+    -fx-min-height: 100;
 }

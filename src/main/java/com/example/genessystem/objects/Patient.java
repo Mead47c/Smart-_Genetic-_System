@@ -28,8 +28,13 @@ public class Patient {
         this.gender = new SimpleStringProperty(gender);
     }
 
+
     public long getNationalId() {
         return nationalId.get();
+    }
+
+    public void setNationalId(long nationalId) {
+        this.nationalId.set(nationalId);
     }
 
     public SimpleLongProperty nationalIdProperty() {
@@ -38,6 +43,10 @@ public class Patient {
 
     public String getMedicalRecord() {
         return medicalRecord.get();
+    }
+
+    public void setMedicalRecord(String medicalRecord) {
+        this.medicalRecord.set(medicalRecord);
     }
 
     public SimpleStringProperty medicalRecordProperty() {

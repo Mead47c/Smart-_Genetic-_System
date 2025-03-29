@@ -29,7 +29,6 @@ public class Main extends Application {
             if (controller instanceof UsernameReceiver) {
                 ((UsernameReceiver) controller).setUsername(username);
             }
-
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);
             primaryStage.centerOnScreen();

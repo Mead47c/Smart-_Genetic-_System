@@ -70,14 +70,66 @@
 }
 
 
+/*.stats-pane {*/
+/*    !* -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #79c0f7, #ffffff); *!*/
+/*    -fx-background-color: #e8f4fd;*/
+/*    -fx-background-radius: 20;*/
+/*    -fx-border-radius: 20;*/
+/*    -fx-border-color: transparent;*/
+/*    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.2, 0, 4);*/
+/*}*/
+
+
 .stats-pane {
-    /* -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #79c0f7, #ffffff); */
-    -fx-background-color: #DCEDF8;
     -fx-background-radius: 20;
+    -fx-padding: 10;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 10, 0, 0, 4);
     -fx-border-radius: 20;
-    -fx-border-color: transparent;
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.2, 0, 4);
+    -fx-text-fill: white;
+    -fx-font-family: "Segoe UI";
 }
+
+.stats-pane.pink {
+    -fx-background-color: linear-gradient(to bottom right, #FFB6C1, #FF69B4);
+}
+
+.stats-pane.yellow {
+    -fx-background-color: linear-gradient(to bottom right, #FFD580, #FFB347);
+}
+
+.stats-pane.green {
+    -fx-background-color: linear-gradient(to bottom right, #B4F8C8, #63D471);
+}
+
+.stats-pane.blue {
+    -fx-background-color: linear-gradient(to bottom right, #A2D2FF, #00B4D8);
+}
+
+.stats-pane.purple {
+    -fx-background-color: linear-gradient(to bottom right, #DDBDF1, #9D4EDD);
+}
+
+.stats-pane Label {
+    -fx-font-family: Roboto;
+    -fx-text-fill: #2c2c2c;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-alignment: center;
+}
+
+
+.stats-numbers-label {
+    -fx-font-family: Consolas;
+    -fx-font-weight: bold;
+    -fx-font-size: 40;
+}
+
+.stats-subtitle-label {
+    -fx-font-family: "Roboto-Black";
+    -fx-text-fill: #000;
+    -fx-font-size: 14;
+}
+
 
 .nav-buttons {
     -fx-background-color: transparent;
@@ -114,73 +166,4 @@
 
 .nav-close-button:hover {
     -fx-background-image: url("../images/exit-red.png");
-}
-
-/* Main PieChart container */
-.pie-chart {
-    -fx-background-color: transparent;
-    -fx-background-radius: 20;
-    -fx-border-radius: 20;
-    -fx-border-width: 1;
-    -fx-padding: 0;
-    -fx-background-insets: 0;
-    -fx-border-color: #2196F3;
-    -fx-pie-radius: 100%;
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.2, 0, 4);
-}
-
-.pie-chart .title-label {
-    -fx-padding: 0;
-    -fx-font-size: 0px;
-}
-
-/* PieChart legend */
-.chart-legend {
-    -fx-background-color: transparent;
-    -fx-border-color: transparent;
-}
-
-/* Legend items */
-.chart-legend-item {
-    -fx-font-family: "Roboto";
-    -fx-font-weight: normal;
-    -fx-font-size: 14;
-    -fx-text-fill: #2196F3;
-}
-
-/* Legend symbols */
-.chart-legend-item-symbol {
-    -fx-background-radius: 10;
-    -fx-border-radius: 10;
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 5, 0.2, 0, 2);
-}
-
-/* PieChart slices */
-.data0.chart-pie {
-    -fx-pie-color: #2196F3;
-}
-
-.data1.chart-pie {
-    -fx-pie-color: #79c0f7;
-}
-
-.data2.chart-pie {
-    -fx-pie-color: #BBDEFB;
-}
-
-.data3.chart-pie {
-    -fx-pie-color: #E3F2FD;
-}
-
-.data4.chart-pie {
-    -fx-pie-color: #90CAF9;
-}
-
-.data5.chart-pie {
-    -fx-pie-color: #64B5F6;
-}
-
-/* Hover effect on slices */
-.chart-pie:hover {
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0.3, 0, 4);
 }

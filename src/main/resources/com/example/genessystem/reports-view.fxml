@@ -1,77 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
-
+<?import javafx.scene.text.Text?>
 <BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:id="reports_root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-            minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0"
+            minWidth="-Infinity" prefHeight="750.0" prefWidth="1400.0"
             styleClass="root-pane" stylesheets="@../../../styles/reports-style.css"
             xmlns="http://javafx.com/javafx/23.0.1" fx:controller="com.example.genessystem.ReportsController">
     <top>
-        <HBox alignment="CENTER_LEFT" prefHeight="150.0" prefWidth="1000.0" styleClass="top-pane"
+        <HBox alignment="CENTER_LEFT" prefHeight="173.0" prefWidth="1505.0" styleClass="top-pane"
               stylesheets="@../../../styles/reports-style.css" BorderPane.alignment="CENTER">
             <children>
-                <VBox alignment="CENTER" spacing="5.0">
+                <HBox prefHeight="160.0" prefWidth="426.0">
                     <children>
-                        <StackPane>
+                        <Text fx:id="reports_mainTitleText" strokeType="OUTSIDE" strokeWidth="0.0"
+                              styleClass="text-title" text="SGS"/>
+                        <VBox alignment="CENTER" prefHeight="160.0" prefWidth="210.0" spacing="5.0">
                             <children>
-                                <Label minWidth="277.0" prefHeight="93.0" prefWidth="318.0" styleClass="title-label"
-                                       stylesheets="@../../../styles/reports-style.css" text="Smart Genetic System"
-                                       textAlignment="CENTER" wrapText="true">
-                                </Label>
-                                <Label text="©" textFill="WHITE">
+                                <StackPane prefHeight="46.0" prefWidth="218.0">
+                                    <children>
+                                        <Label minWidth="59.0" prefHeight="46.0" prefWidth="315.0"
+                                               styleClass="title-label" stylesheets="@../../../styles/reports-style.css"
+                                               text="Smart Genetic System" textAlignment="CENTER" wrapText="true"/>
+                                    </children>
+                                </StackPane>
+                                <Label style="-fx-alignment: center;" text="V3.002">
                                     <font>
-                                        <Font name="Consolas" size="25.0"/>
+                                        <Font name="Consolas" size="14.0"/>
                                     </font>
-                                    <StackPane.margin>
-                                        <Insets left="150.0" top="30.0"/>
-                                    </StackPane.margin>
                                 </Label>
                             </children>
-                        </StackPane>
-                        <Label text="V1.001">
-                            <font>
-                                <Font name="Consolas" size="14.0"/>
-                            </font>
-                        </Label>
+                        </VBox>
                     </children>
-                </VBox>
+                </HBox>
                 <StackPane minWidth="250.0">
                     <children>
                         <VBox alignment="CENTER_LEFT" prefWidth="100.0" spacing="5.0">
                             <children>
-                                <Label styleClass="user-data-labels"
-                                       stylesheets="@../../../styles/patient-data-style.css" text="Username:">
-                                </Label>
+                                <Label styleClass="user-data-labels" stylesheets="@../../../styles/reports-style.css"
+                                       text="Username:"/>
                                 <Label fx:id="reports_usernameLabel" style="-fx-font-weight: bold;"
-                                       styleClass="user-data-labels"
-                                       stylesheets="@../../../styles/patient-data-style.css" text="Label"
-                                       textFill="WHITE" wrapText="true">
-                                </Label>
+                                       styleClass="user-data-labels" stylesheets="@../../../styles/reports-style.css"
+                                       text="Label" textFill="WHITE" wrapText="true"/>
                                 <Label layoutX="60.0" layoutY="64.0" styleClass="user-data-labels"
-                                       stylesheets="@../../../styles/patient-data-style.css" text="Login Time:">
-                                </Label>
+                                       stylesheets="@../../../styles/reports-style.css" text="Login Time:"/>
                                 <Label fx:id="reports_loginDateLabel" layoutX="79.0" layoutY="76.0"
                                        nodeOrientation="RIGHT_TO_LEFT" style="-fx-font-weight: bold;"
-                                       styleClass="user-data-labels"
-                                       stylesheets="@../../../styles/patient-data-style.css" text="Label"
-                                       textFill="WHITE" wrapText="true">
-                                </Label>
+                                       styleClass="user-data-labels" stylesheets="@../../../styles/reports-style.css"
+                                       text="Label" textFill="WHITE" wrapText="true"/>
                                 <Label fx:id="reports_loginTimeLabel" layoutX="10.0" layoutY="112.0"
                                        nodeOrientation="RIGHT_TO_LEFT" style="-fx-font-weight: bold;"
-                                       styleClass="user-data-labels"
-                                       stylesheets="@../../../styles/patient-data-style.css" text="Label"
-                                       textFill="WHITE" wrapText="true">
-                                </Label>
+                                       styleClass="user-data-labels" stylesheets="@../../../styles/reports-style.css"
+                                       text="Label" textFill="WHITE" wrapText="true"/>
                             </children>
                         </VBox>
                         <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
@@ -84,7 +68,7 @@
                         </ImageView>
                     </children>
                     <HBox.margin>
-                        <Insets left="630.0"/>
+                        <Insets left="700.0"/>
                     </HBox.margin>
                 </StackPane>
             </children>
@@ -95,38 +79,72 @@
     </top>
     <left>
         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="150.0" spacing="20.0" styleClass="left-pane"
-              stylesheets="@../../../styles/patient-data-style.css" BorderPane.alignment="CENTER">
+              stylesheets="@../../../styles/reports-style.css" BorderPane.alignment="CENTER">
             <BorderPane.margin>
                 <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
             </BorderPane.margin>
             <children>
                 <Button fx:id="reports_dashboardButton" mnemonicParsing="false" onAction="#switchToDashboard"
-                        styleClass="nav-buttons" stylesheets="@../../../styles/patient-data-style.css"
-                        text="Dashboard"/>
+                        styleClass="nav-buttons" stylesheets="@../../../styles/reports-style.css" text="Dashboard"/>
                 <Button fx:id="reports_patientDataButton" mnemonicParsing="false" onAction="#switchToPatientData"
-                        styleClass="nav-buttons" stylesheets="@../../../styles/patient-data-style.css"
-                        text="Patient Data"/>
+                        styleClass="nav-buttons" stylesheets="@../../../styles/reports-style.css" text="Patient Data"/>
                 <Button fx:id="reports_diagnosticsButton" mnemonicParsing="false" onAction="#switchToDiagnostics"
-                        styleClass="nav-buttons" stylesheets="@../../../styles/patient-data-style.css"
-                        text="Diagnostics"/>
+                        styleClass="nav-buttons" stylesheets="@../../../styles/reports-style.css" text="Diagnostics"/>
                 <Button disable="true" layoutX="11.0" layoutY="235.0" mnemonicParsing="false" styleClass="nav-buttons"
-                        stylesheets="@../../../styles/patient-data-style.css" text="Reports"/>
+                        stylesheets="@../../../styles/reports-style.css" text="Reports"/>
                 <Button fx:id="reports_logoutButton" mnemonicParsing="false" onAction="#logout" styleClass="nav-buttons"
-                        stylesheets="@../../../styles/patient-data-style.css" text="Logout"/>
+                        stylesheets="@../../../styles/reports-style.css" text="Logout"/>
                 <Button fx:id="reports_exit" mnemonicParsing="false" onAction="#closeProgram"
-                        styleClass="nav-close-button" stylesheets="@../../../styles/patient-data-style.css"/>
+                        styleClass="nav-close-button" stylesheets="@../../../styles/reports-style.css"/>
             </children>
         </VBox>
     </left>
     <center>
         <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="center-pane"
-                    stylesheets="@../../../styles/patient-data-style.css" BorderPane.alignment="CENTER">
+                    stylesheets="@../../../styles/reports-style.css" BorderPane.alignment="CENTER">
             <BorderPane.margin>
                 <Insets bottom="10.0" right="10.0" top="10.0"/>
             </BorderPane.margin>
-            <children>
-                <HBox layoutX="14.0" layoutY="14.0" spacing="10.0"/>
-            </children>
+            <VBox alignment="TOP_CENTER" prefHeight="496.0" prefWidth="1016.8" spacing="10.0"
+                  AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                  AnchorPane.topAnchor="0.0" BorderPane.alignment="CENTER">
+                <children>
+                    <StackPane alignment="CENTER_LEFT">
+                        <children>
+                            <TextField fx:id="reports_searchField" prefWidth="900"
+                                       promptText="Search by national ID or medical record..." styleClass="search-field"
+                                       stylesheets="@../../../styles/reports-style.css">
+                                <padding>
+                                    <Insets left="55.0"/>
+                                </padding>
+                            </TextField>
+                            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@../../../images/search.png"/>
+                                </image>
+                                <StackPane.margin>
+                                    <Insets left="10.0"/>
+                                </StackPane.margin>
+                            </ImageView>
+                        </children>
+                    </StackPane>
+                    <TableView fx:id="reports_tableView" maxWidth="1190.0" minWidth="975.0" prefHeight="462.0"
+                               prefWidth="1175.0" stylesheets="@../../../styles/reports-style.css">
+                        <columns>
+                            <TableColumn fx:id="reports_logoCol" prefWidth="75.0"/>
+                            <TableColumn fx:id="reports_nationalIdCol" text="National ID"/>
+                            <TableColumn fx:id="reports_medicalRecordCol" text="Medical Record"/>
+                            <TableColumn fx:id="reports_firstNameCol" text="First Name"/>
+                            <TableColumn fx:id="reports_lastNameCol" text="Last Name"/>
+                            <TableColumn fx:id="reports_phoneCol" text="Phone"/>
+                            <TableColumn fx:id="reports_printCol" prefWidth="75.0" text="Print | Share"/>
+                        </columns>
+                    </TableView>
+                </children>
+            </VBox>
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+            </padding>
         </AnchorPane>
     </center>
 </BorderPane>

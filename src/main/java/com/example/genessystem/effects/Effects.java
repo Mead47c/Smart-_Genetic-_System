@@ -1,6 +1,8 @@
 package com.example.genessystem.effects;
 
 import javafx.animation.*;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
@@ -8,9 +10,12 @@ import javafx.scene.control.TextField;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.effect.InnerShadow;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -153,6 +158,59 @@ public class Effects {
                 timeline.setOnFinished(e -> textField.setStyle(""));
             }
             timeline.play();
+        });
+    }
+
+
+    private static final Font robotoFont = Font.loadFont(
+            Effects.class.getResourceAsStream("/fonts/Roboto-Regular.ttf"), 14
+    );
+
+    public static void applyHoverPrompt(StackPane stack, Button button, TextFlow textFlow, String message) {
+        // Set initial style for text flow
+        textFlow.setVisible(false);
+        textFlow.setDisable(true);
+
+        final boolean[] isAnimating = {false};  // flag to prevent re-trigger
+
+        stack.setOnMouseEntered(e -> {
+            if (isAnimating[0]) return; // prevent re-triggering
+            isAnimating[0] = true;
+
+            stack.setAlignment(Pos.CENTER_LEFT);
+            textFlow.getChildren().clear();
+            textFlow.setPadding(new Insets(10, 10, 10, 35));
+            textFlow.setVisible(true);
+            textFlow.setDisable(false);
+
+            RotateTransition rotate = new RotateTransition(Duration.millis(500), button);
+            rotate.setByAngle(360);
+            rotate.setInterpolator(Interpolator.LINEAR);
+            rotate.play();
+
+            Timeline timeline = new Timeline();
+            for (int i = 0; i < message.length(); i++) {
+                final int index = i;
+                KeyFrame keyFrame = new KeyFrame(Duration.millis(40 * i), evt -> {
+                    Text letter = new Text(String.valueOf(message.charAt(index)));
+                    letter.setFont(robotoFont);
+                    letter.setFill(Color.web("#2196f3"));
+                    textFlow.getChildren().add(letter);
+                });
+                timeline.getKeyFrames().add(keyFrame);
+            }
+
+            timeline.setOnFinished(evt -> isAnimating[0] = false); // reset after animation
+            timeline.play();
+        });
+
+        stack.setOnMouseExited(e -> {
+            button.setRotate(0);
+            stack.setAlignment(Pos.CENTER);
+            textFlow.setVisible(false);
+            textFlow.setDisable(true);
+            textFlow.getChildren().clear();
+            isAnimating[0] = false; // allow animation again
         });
     }
 
