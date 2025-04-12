@@ -75,7 +75,7 @@ public class AboutUs {
         maryam.setFont(H3);
         Label asayil = new Label("Asayil K. Al Serhani");
         asayil.setFont(H3);
-        Label amlak = new Label("Mead S. Al Fuhaigi");
+        Label amlak = new Label("Amlak S. Al Fuhaigi");
         amlak.setFont(H3);
 
         Label copywritelabel = new Label("Copywrite © 2025 SGS Team");
