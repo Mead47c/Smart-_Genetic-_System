@@ -10,6 +10,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -18,18 +19,9 @@ import java.util.Objects;
 
 public class AboutUs {
 
-    static Font H1 = Font.loadFont(
-            AboutUs.class.getResource(
-                    "/fonts/Montserrat-Black.ttf"
-            ).toExternalForm(), 20);
-    static Font H2 = Font.loadFont(
-            AboutUs.class.getResource(
-                    "/fonts/Roboto-Black.ttf"
-            ).toExternalForm(), 12);
-    static Font H3 = Font.loadFont(
-            AboutUs.class.getResource(
-                    "/fonts/Roboto-Regular.ttf"
-            ).toExternalForm(), 12);
+    static Font H1 = Font.font("Arial", FontWeight.BOLD, 20);
+    static Font H2 = Font.font("Arial", FontWeight.BOLD, 12);
+    static Font H3 = Font.font("Arial, 12");
 
 
     public static void showAboutUsStage() {
@@ -77,6 +69,7 @@ public class AboutUs {
         asayil.setFont(H3);
         Label amlak = new Label("Amlak S. Al Fuhaigi");
         amlak.setFont(H3);
+
 
         Label copywritelabel = new Label("Copywrite © 2025 SGS Team");
         copywritelabel.setFont(H3);
