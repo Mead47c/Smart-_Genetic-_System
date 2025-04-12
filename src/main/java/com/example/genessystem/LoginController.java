@@ -11,10 +11,10 @@ import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -372,6 +372,208 @@ public class LoginController implements Initializable {
         } catch (SQLException ex) {
             Dialogs.showAlertMessage("System Error!", ex.getMessage(), Dialogs.MessageType.ERROR_MESSAGE);
         }
+    }
+
+
+    // ***************************************************************************************************
+    // ************************************* Forget Password Action   ************************************
+    // ***************************************************************************************************
+    @FXML
+    void ForgetPasswordPerform(ActionEvent event) {
+        String otp;
+        Scene scene = new Scene(ForgetPasswordDialog(), 400, 300);
+        scene.getStylesheets().add(getClass().getResource("/styles/otp-stage-style.css").toExternalForm());
+        scene.setFill(Color.TRANSPARENT);
+
+        Stage otpStage = new Stage();
+        scene.getRoot().requestFocus();
+
+        otpStage.setScene(scene);
+        otpStage.initModality(Modality.APPLICATION_MODAL);
+        otpStage.initStyle(StageStyle.UNDECORATED);
+        otpStage.setAlwaysOnTop(true);
+        otpStage.show();
+
+    }
+
+    private VBox ForgetPasswordDialog() {
+        VBox root = new VBox(20);
+        root.setAlignment(Pos.CENTER);
+
+
+        TextField email = new TextField();
+        email.setPromptText("Enter your email address ...");
+        email.getStyleClass().add("email-field");
+        Button sendOTPButton = new Button("Send OTP");
+
+        VBox emailBox = new VBox(10, email, sendOTPButton);
+        emailBox.setAlignment(Pos.CENTER);
+
+        Label progressLabel = new Label("Sending OTP ...");
+        ImageView progressIndicator = new ImageView(new Image(
+                getClass().getResourceAsStream(
+                        "/images/loading.gif"
+                )));
+        progressIndicator.setFitHeight(80);
+        progressIndicator.setFitWidth(80);
+
+        VBox progressBox = new VBox(10, progressLabel, progressIndicator);
+        progressBox.setAlignment(Pos.CENTER);
+        progressBox.setVisible(false);
+
+
+        TextField[] otpFields = new TextField[6];
+        HBox otpBox = new HBox(5);
+        otpBox.setAlignment(Pos.CENTER);
+        otpBox.setVisible(false);
+
+        for (int i = 0; i < otpFields.length; i++) {
+            otpFields[i] = new TextField();
+            otpFields[i].setAlignment(Pos.CENTER);
+            otpFields[i].setVisible(false);
+            otpFields[i].setPrefWidth(40);
+            otpFields[i].setMaxWidth(40);
+            otpBox.getChildren().add(otpFields[i]);
+
+            int currentIndex = i;
+            otpFields[i].textProperty().addListener((
+                    observable,
+                    oldValue, newValue
+            ) -> {
+                if (!newValue.isEmpty() && Character.isDigit(newValue.charAt(0))) {
+                    otpFields[currentIndex].setText(String.valueOf(newValue.charAt(0)));
+
+                    Platform.runLater(() -> {
+                        if (currentIndex < otpFields.length - 1) {
+                            otpFields[currentIndex + 1].requestFocus();
+                        } else {
+                            root.requestFocus();
+                        }
+                    });
+                } else {
+                    otpFields[currentIndex].setText("");
+                }
+            });
+        }
+
+
+        Button okButton = new Button("OK");
+        okButton.setVisible(false);
+
+        okButton.setOnAction(e -> {
+            StringBuilder enteredOTP = new StringBuilder();
+            for (TextField field : otpFields) enteredOTP.append(field.getText());
+
+            if (enteredOTP.toString().equals(String.valueOf(generatedOTP))) {
+                try (PreparedStatement stmt = DatabaseConnection.connect().prepareStatement(
+                        "SELECT password FROM accounts WHERE email=?")) {
+                    stmt.setString(1, email.getText());
+                    ResultSet rs = stmt.executeQuery();
+                    if (rs.next()) {
+                        String password = rs.getString("password");
+
+                        Dialogs.showAlertMessage(
+                                "Your Password",
+                                "Your password is: " + password,
+                                Dialogs.MessageType.INFO_MESSAGE
+                        );
+                    } else {
+                        Dialogs.showAlertMessage(
+                                "Error",
+                                "Email not found.",
+                                Dialogs.MessageType.ERROR_MESSAGE
+                        );
+                    }
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                    Dialogs.showAlertMessage(
+                            "Error",
+                            "Could not retrieve password.",
+                            Dialogs.MessageType.ERROR_MESSAGE
+                    );
+                }
+
+                ((Stage) root.getScene().getWindow()).close();
+
+            } else {
+                progressLabel.setText("❌ Invalid OTP. Try again.");
+            }
+        });
+
+
+        Button cancelButton = new Button("Cancel");
+        cancelButton.setOnAction(e -> {
+            Stage currentStage = (Stage) root.getScene().getWindow();
+            currentStage.close();
+        });
+
+
+        sendOTPButton.setOnAction(e -> {
+            String query = "SELECT email FROM accounts WHERE email=?";
+
+            try (PreparedStatement stmt = DatabaseConnection.connect().prepareStatement(query)) {
+                stmt.setString(1, email.getText());
+                ResultSet rs = stmt.executeQuery();
+
+                if (rs.next()) {
+                    emailBox.setVisible(false);
+                    progressBox.setVisible(true);
+
+
+                    generatedOTP = Email.sendOTPEmail(
+                            email.getText(), "", progressLabel, new Email.EmailCallback() {
+                                @Override
+                                public void onSuccess(String message) {
+                                    Platform.runLater(() -> {
+                                        progressLabel.setText("OTP Sent. Check your email.");
+                                        progressIndicator.setVisible(false);
+                                        otpBox.setVisible(true);
+                                        for (TextField field : otpFields) field.setVisible(true);
+                                        okButton.setVisible(true);
+                                    });
+                                }
+
+                                @Override
+                                public void onFailure(String error) {
+                                    Platform.runLater(() -> {
+                                        progressLabel.setText("Check the internet connection!");
+                                        progressIndicator.setVisible(false);
+                                        cancelButton.setVisible(true);
+                                    });
+                                }
+                            }
+                    );
+
+                } else {
+                    Dialogs.showAlertMessage(
+                            "Check Email Address",
+                            "Sorry, the provided email address is incorrect.",
+                            Dialogs.MessageType.ERROR_MESSAGE
+                    );
+                }
+
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+                Dialogs.showConfirmationAlert(
+                        "System Error",
+                        "Something went wrong\nTry again later!!!",
+                        () -> ((Stage) root.getScene().getWindow()).close()
+                );
+            }
+        });
+
+
+        StackPane stackPane = new StackPane();
+        stackPane.setAlignment(Pos.CENTER);
+        stackPane.getChildren().addAll(emailBox, progressBox, otpBox);
+        stackPane.setPadding(new Insets(50, 0, 0, 0));
+
+        HBox buttonBox = new HBox(10, okButton, cancelButton);
+        buttonBox.setPadding(new Insets(30, 0, 0, 0));
+        buttonBox.setAlignment(Pos.CENTER);
+
+        root.getChildren().addAll(stackPane, buttonBox);
+        return root;
     }
 
 

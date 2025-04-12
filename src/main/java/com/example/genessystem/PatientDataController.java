@@ -15,11 +15,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
-import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.input.Clipboard;
@@ -209,6 +209,11 @@ public class PatientDataController implements Initializable, UsernameReceiver {
     public void switchToReports(ActionEvent actionEvent) {
         String username = patientData_usernameLabel.getText();
         Main.switchScreen("reports-view.fxml", username);
+    }
+
+    @FXML
+    public void aboutUsPopup(ActionEvent event) {
+        AboutUs.showAboutUsStage();
     }
 
 

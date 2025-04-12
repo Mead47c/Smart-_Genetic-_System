@@ -92,6 +92,8 @@
                         styleClass="nav-buttons" stylesheets="@../../../styles/reports-style.css" text="Diagnostics"/>
                 <Button disable="true" layoutX="11.0" layoutY="235.0" mnemonicParsing="false" styleClass="nav-buttons"
                         stylesheets="@../../../styles/reports-style.css" text="Reports"/>
+                <Button layoutX="11.0" layoutY="228.0" mnemonicParsing="false" onAction="#aboutUsPopup"
+                        styleClass="nav-buttons" stylesheets="@../../../styles/reports-style.css" text="About Us"/>
                 <Button fx:id="reports_logoutButton" mnemonicParsing="false" onAction="#logout" styleClass="nav-buttons"
                         stylesheets="@../../../styles/reports-style.css" text="Logout"/>
                 <Button fx:id="reports_exit" mnemonicParsing="false" onAction="#closeProgram"

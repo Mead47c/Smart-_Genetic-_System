@@ -47,7 +47,9 @@ public class Main extends Application {
     public void start(Stage stage) throws IOException {
         primaryStage = stage;
         stage.initStyle(StageStyle.UNDECORATED);
-        stage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("/images/mainLogo.png"))));
+        stage.getIcons().add(new Image(Objects.requireNonNull(
+                getClass().getResourceAsStream("/images/mainLogo.png"
+                ))));
         switchScreen("login-view.fxml", null);
         stage.show();
     }

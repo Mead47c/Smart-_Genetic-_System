@@ -60,6 +60,13 @@
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.2, 0, 4);
 }
 
+.hamburger-button {
+    -fx-font-size: 18px;
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-cursor: hand;
+}
+
 .center-pane {
     /* -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #e8f4fd, #ffffff); */
     -fx-background-color: #fff;

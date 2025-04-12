@@ -52,6 +52,21 @@
     -fx-border-width: 2;
 }
 
+.email-field {
+    -fx-border-width: 0 0 1 0;
+    -fx-min-width: 300;
+    -fx-max-width: 300;
+    -fx-min-height: 35;
+    -fx-max-height: 35;
+}
+
+.email-field:focused {
+    -fx-background-color: #e5e5e5;
+    -fx-background-radius: 8;
+    -fx-border-width: 0 0 2 0;
+
+}
+
 .button {
     -fx-background-color: #2196f3;
     -fx-text-fill: #fff;

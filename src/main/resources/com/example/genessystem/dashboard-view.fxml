@@ -15,28 +15,34 @@
         <HBox alignment="CENTER_LEFT" prefHeight="173.0" prefWidth="1505.0" styleClass="top-pane"
               stylesheets="@../../../styles/reports-style.css" BorderPane.alignment="CENTER">
             <children>
-                <HBox prefHeight="160.0" prefWidth="426.0">
+                <VBox>
                     <children>
-                        <Text fx:id="dashboard_mainTitleText" strokeType="OUTSIDE" strokeWidth="0.0"
-                              styleClass="text-title" text="SGS"/>
-                        <VBox alignment="CENTER" prefHeight="160.0" prefWidth="210.0" spacing="5.0">
+                        <HBox prefHeight="160.0" prefWidth="426.0">
                             <children>
-                                <StackPane prefHeight="46.0" prefWidth="218.0">
+                                <Text fx:id="dashboard_mainTitleText" strokeType="OUTSIDE" strokeWidth="0.0"
+                                      styleClass="text-title" text="SGS"/>
+                                <VBox alignment="CENTER" prefHeight="160.0" prefWidth="210.0" spacing="5.0">
                                     <children>
-                                        <Label minWidth="59.0" prefHeight="46.0" prefWidth="315.0"
-                                               styleClass="title-label" stylesheets="@../../../styles/reports-style.css"
-                                               text="Smart Genetic System" textAlignment="CENTER" wrapText="true"/>
+                                        <StackPane prefHeight="46.0" prefWidth="218.0">
+                                            <children>
+                                                <Label minWidth="59.0" prefHeight="46.0" prefWidth="315.0"
+                                                       styleClass="title-label"
+                                                       stylesheets="@../../../styles/reports-style.css"
+                                                       text="Smart Genetic System" textAlignment="CENTER"
+                                                       wrapText="true"/>
+                                            </children>
+                                        </StackPane>
+                                        <Label style="-fx-alignment: center;" text="V3.002">
+                                            <font>
+                                                <Font name="Consolas" size="14.0"/>
+                                            </font>
+                                        </Label>
                                     </children>
-                                </StackPane>
-                                <Label style="-fx-alignment: center;" text="V3.002">
-                                    <font>
-                                        <Font name="Consolas" size="14.0"/>
-                                    </font>
-                                </Label>
+                                </VBox>
                             </children>
-                        </VBox>
+                        </HBox>
                     </children>
-                </HBox>
+                </VBox>
                 <StackPane minWidth="250.0">
                     <children>
                         <VBox alignment="CENTER_LEFT" prefWidth="100.0" spacing="5.0">
@@ -94,6 +100,9 @@
                 <Button fx:id="dashboard_reportsButton" layoutX="11.0" layoutY="235.0" mnemonicParsing="false"
                         onAction="#switchToReports" styleClass="nav-buttons"
                         stylesheets="@../../../styles/dashboard-style.css" text="Reports"/>
+                <Button fx:id="dashboard_reportsButton1" layoutX="11.0" layoutY="293.0" mnemonicParsing="false"
+                        onAction="#aboutUsPopup" styleClass="nav-buttons"
+                        stylesheets="@../../../styles/dashboard-style.css" text="About us"/>
                 <Button fx:id="dashboard_logoutButton" mnemonicParsing="false" onAction="#logout"
                         styleClass="nav-buttons" stylesheets="@../../../styles/dashboard-style.css" text="Logout"/>
                 <Button fx:id="dashboard_exit" mnemonicParsing="false" onAction="#closeProgram"

@@ -96,6 +96,7 @@ public class DashboardController implements Initializable, UsernameReceiver {
     @FXML
     public Text dashboard_mainTitleText;
 
+
     // ****************************** END OF Declaration Area ********************************
 
 
@@ -167,6 +168,10 @@ public class DashboardController implements Initializable, UsernameReceiver {
         Main.switchScreen("reports-view.fxml", username);
     }
 
+    @FXML
+    void aboutUsPopup(ActionEvent event) {
+        AboutUs.showAboutUsStage();
+    }
 
     // *********************************************************************************************
     // *************************************  Visualization  ***************************************

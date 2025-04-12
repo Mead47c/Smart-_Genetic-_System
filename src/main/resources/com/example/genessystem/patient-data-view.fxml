@@ -97,6 +97,8 @@
                 <Button fx:id="patientData_reportsButton" layoutX="11.0" layoutY="235.0" mnemonicParsing="false"
                         onAction="#switchToReports" styleClass="nav-buttons"
                         stylesheets="@../../../styles/patient-data-style.css" text="Reports"/>
+                <Button layoutX="11.0" layoutY="293.0" mnemonicParsing="false" onAction="#aboutUsPopup"
+                        styleClass="nav-buttons" stylesheets="@../../../styles/patient-data-style.css" text="About Us"/>
                 <Button fx:id="patientData_logoutButton" mnemonicParsing="false" onAction="#logout"
                         styleClass="nav-buttons" stylesheets="@../../../styles/patient-data-style.css" text="Logout"/>
                 <Button fx:id="patientData_exit" mnemonicParsing="false" onAction="#closeProgram"

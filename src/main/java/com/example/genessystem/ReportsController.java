@@ -13,10 +13,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
+import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -147,6 +147,11 @@ public class ReportsController implements Initializable, UsernameReceiver {
     public void switchToDiagnostics(ActionEvent actionEvent) {
         String username = reports_usernameLabel.getText();
         Main.switchScreen("diagnostics-view.fxml", username);
+    }
+
+    @FXML
+    public void aboutUsPopup(ActionEvent event) {
+        AboutUs.showAboutUsStage();
     }
 
 

@@ -21,8 +21,8 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class Email {
-    private static final String SENDER_EMAIL = "studentsgrading.program@gmail.com";
-    private static final String APP_PASSWORD = "jfqt kbox kugh hilf";
+    private static final String SENDER_EMAIL = "appsmartgeneticsystem@gmail.com";
+    private static final String APP_PASSWORD = "nkkh deis ofrr fsvm";
     private static final String SENDER_NAME = "SGS-Smart Genetic System";
 
     private static ExecutorService executor = Executors.newCachedThreadPool();
