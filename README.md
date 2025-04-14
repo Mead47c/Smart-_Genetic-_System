@@ -1,4 +1,4 @@
-* SGS stands for Smart Genetic System
+* SGS stands for Smart Genetic System V3.001
 * This is our graduation project
 * The program takes a list of people's data with Genetic issues.
 * We focus on the Genetic diseases that are common in Saudi Arabia.
