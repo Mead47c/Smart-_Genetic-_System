@@ -20,7 +20,7 @@
   - Sultan R. Alfalah  @srfalah
 
 ---
-Screenshots:
+==> Screenshots:
 ---
 * Login Screen
 ![Alt text](https://raw.githubusercontent.com/Mead47c/Smart-_Genetic-_System/main/src/main/resources/screenshots/login-screen.png)
