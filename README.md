@@ -19,3 +19,29 @@
 
 ---
 Screenshots:
+*Login Screen
+![Alt text](https://raw.githubusercontent.com/Mead47c/Smart-_Genetic-_System/main/src/main/resources/screenshots/login-screen.png)
+
+*Signup Screen
+![Alt text](https://raw.githubusercontent.com/Mead47c/Smart-_Genetic-_System/main/src/main/resources/screenshots/signup-screen.png)
+
+*Authentication to check the new Registration
+![Alt text](https://raw.githubusercontent.com/Mead47c/Smart-_Genetic-_System/main/src/main/resources/screenshots/auth.png)
+
+*System alerts
+![Alt text](https://raw.githubusercontent.com/Mead47c/Smart-_Genetic-_System/main/src/main/resources/screenshots/system-alert.png)
+
+*Dashboard Screen
+![Alt text](https://raw.githubusercontent.com/Mead47c/Smart-_Genetic-_System/main/src/main/resources/screenshots/dashboard.png)
+
+*Patients list
+![Alt text](https://raw.githubusercontent.com/Mead47c/Smart-_Genetic-_System/main/src/main/resources/screenshots/patients.png)
+
+*Diagnostics & Analysis
+![Alt text](https://raw.githubusercontent.com/Mead47c/Smart-_Genetic-_System/main/src/main/resources/screenshots/diagnostics.png)
+
+*Print or send the report after analysis process
+![Alt text](https://raw.githubusercontent.com/Mead47c/Smart-_Genetic-_System/main/src/main/resources/screenshots/reports.png)
+
+*Logout with a confirmation message
+![Alt text](https://raw.githubusercontent.com/Mead47c/Smart-_Genetic-_System/main/src/main/resources/screenshots/logout.png)
