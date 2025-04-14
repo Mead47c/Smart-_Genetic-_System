@@ -10,38 +10,39 @@
 * The Authentication used to create an account is OTP sent to the user's email
 ---
 * Programmed by:
-  1- Mead S. Alruwaili
-  2- Maryam K. Alshammari
-  3- Asayil K. Alsarhani
-  4- Amlak S. Alfuhaigi
-*Project Supervisor:
-- Sultan R. Alfalah  @srfalah
+  - Mead S. Alruwaili
+  - Maryam K. Alshammari
+  - Asayil K. Alsarhani
+  - Amlak S. Alfuhaigi
+---
+* Project Supervisor:
+  - Sultan R. Alfalah  @srfalah
 
 ---
 Screenshots:
-*Login Screen
+  *Login Screen
 ![Alt text](https://raw.githubusercontent.com/Mead47c/Smart-_Genetic-_System/main/src/main/resources/screenshots/login-screen.png)
 
-*Signup Screen
+  *Signup Screen
 ![Alt text](https://raw.githubusercontent.com/Mead47c/Smart-_Genetic-_System/main/src/main/resources/screenshots/signup-screen.png)
 
-*Authentication to check the new Registration
+  *Authentication to check the new Registration
 ![Alt text](https://raw.githubusercontent.com/Mead47c/Smart-_Genetic-_System/main/src/main/resources/screenshots/auth.png)
 
-*System alerts
+  *System alerts
 ![Alt text](https://raw.githubusercontent.com/Mead47c/Smart-_Genetic-_System/main/src/main/resources/screenshots/system-alert.png)
 
-*Dashboard Screen
+  *Dashboard Screen
 ![Alt text](https://raw.githubusercontent.com/Mead47c/Smart-_Genetic-_System/main/src/main/resources/screenshots/dashboard.png)
 
-*Patients list
+  *Patients list
 ![Alt text](https://raw.githubusercontent.com/Mead47c/Smart-_Genetic-_System/main/src/main/resources/screenshots/patients.png)
 
-*Diagnostics & Analysis
+  *Diagnostics & Analysis
 ![Alt text](https://raw.githubusercontent.com/Mead47c/Smart-_Genetic-_System/main/src/main/resources/screenshots/diagnostics.png)
 
-*Print or send the report after analysis process
+  *Print or send the report after analysis process
 ![Alt text](https://raw.githubusercontent.com/Mead47c/Smart-_Genetic-_System/main/src/main/resources/screenshots/reports.png)
 
-*Logout with a confirmation message
+  *Logout with a confirmation message
 ![Alt text](https://raw.githubusercontent.com/Mead47c/Smart-_Genetic-_System/main/src/main/resources/screenshots/logout.png)
