@@ -1,3 +1,4 @@
+* SGS stands for Smart Genetic System V3.001
 * This is our graduation project
 * The program takes a list of people's data with Genetic issues.
 * We focus on the Genetic diseases that are common in Saudi Arabia.
@@ -20,7 +21,7 @@
   - Sultan R. Alfalah  @srfalah
 
 ---
-Screenshots:
+==> Screenshots:
 ---
 * Login Screen
 ![Alt text](https://raw.githubusercontent.com/Mead47c/Smart-_Genetic-_System/main/src/main/resources/screenshots/login-screen.png)
