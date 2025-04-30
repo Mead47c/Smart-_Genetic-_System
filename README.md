@@ -13,9 +13,9 @@
 ---
 * Programmed by:
   - Mead S. Alruwaili
+  - Amlak S. Alfuhaigi
   - Maryam K. Alshammari
   - Asayil K. Alsarhani
-  - Amlak S. Alfuhaigi
 ---
 * Project Supervisor:
   - Sultan R. Alfalah  @srfalah
