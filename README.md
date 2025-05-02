@@ -1,7 +1,8 @@
 * SGS stands for Smart Genetic System V3.001
 * This is our graduation project
 * The program evaluates the risk of developing common genetic diseases in the Kingdom of Saudi Arabia based on a list of individuals’ genetic and family history data.
-* 
+
+
 * We focus on the Genetic diseases that are common in Saudi Arabia.
 * The program calculates the risk of each patient who might carry a genetic disease.
 * The program can print a report of the patient's data or can be sent by his/her email after he/she's being diagnosed.
@@ -16,6 +17,7 @@
 
 * 
 ---
+
 * Programmed by:
   - Mead S. Alruwaili
   - Amlak S. Alfuhaigi
