@@ -6,8 +6,6 @@
 * We focus on the Genetic diseases that are common in Saudi Arabia.
 * The program calculates the risk of each patient who might carry a genetic disease.
 * The program can print a report of the patient's data or can be sent by his/her email after he/she's being diagnosed.
-
-* 
 ---
 
 * This program is fully developed using JDK23, The Framework used is JavaFX23.0.1
