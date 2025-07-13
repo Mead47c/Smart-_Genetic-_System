@@ -14,8 +14,6 @@
 * program's UIs designed using SceneBuilder
 * program's icons and logo are downloaded from FlatIcon
 * The Authentication used to create an account is OTP sent to the user's email
-
-* 
 ---
 
 * Programmed by:
